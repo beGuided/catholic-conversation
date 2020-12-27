@@ -1,3 +1,30 @@
+@font-face{
+    font-family: poppinsregular;
+    src: url(assets/fonts/Poppins/Poppins-Regular.ttf);
+}
+@font-face{
+    font-family: poppinsblack;
+    src: url(assets/fonts/Poppins/Poppins-Black.ttf);
+}
+@font-face{
+    font-family: poppinsxbold;
+    src: url(assets/fonts/Poppins/Poppins-ExtraBold.ttf);
+}
+
+*{
+    font-family: poppinsregular;
+    color: black;
+}
+.textblack{
+    font-family: poppinsblack;
+}
+.textxbold{
+    font-family: poppinsxbold;
+}
+.textxbold-white{
+    font-family: poppinsxbold;
+    color: white;
+}
 
 a {
     text-decoration: none;
@@ -20,10 +47,88 @@ li{
     margin: auto;
     margin-bottom: 20px;
 }
-.divider-full{
+.divider_full{
     background: #ffc107;
-    width: 350px;
+  
+    width: 1000px;
     height: 5px;
+
     margin: auto;
     margin-bottom: 20px;
+}
+.bg{
+    background: url(../assets/images/blog/bg-1.png) no-repeat rgb(71, 67, 3);
+    background-blend-mode: multiply;
+    background-size: cover;
+    width: 100%;
+    opacity: 95%;
+}
+.bg-image{
+    margin: auto;
+    height: 450px;
+    width: 1250px;
+    background: url(../assets/images/blog/dylan-gillis-KdeqA3aTnBY-unsplash-1@3x.png) no-repeat;
+    background-size: cover;
+}
+.bg-slant{
+    margin: auto;
+    width: 100%;
+    background: url(../assets/images/blog/slant-bg.png) no-repeat;
+    background-size: cover;
+}
+.bg-book{
+    height: 200px;
+    background: url(../assets/images/blog/ryoji-iwata-IBaVuZsJJTo-unsplash@3x.png) no-repeat rgb(117, 116, 116);
+    background-size: cover;   
+    background-blend-mode: multiply;
+}
+.bg-book1{
+    height: 400px;
+    background: url(../assets/images/blog/ryoji-iwata-IBaVuZsJJTo-unsplash@3x.png) no-repeat rgb(117, 116, 116);
+    background-size: cover;   
+    background-blend-mode: multiply;
+}
+.bg-blog{
+    height: 500px;
+    width: 400px;
+    background: url(../assets/images/blog/rosary.png) no-repeat rgb(117, 116, 116);
+    background-size: cover;   
+    background-blend-mode: multiply;
+}
+.bg-blog-full{
+    height: 500px;
+    width: 80%;
+    background: url(../assets/images/blog/rosary.png) no-repeat rgb(117, 116, 116);
+    background-size: cover;   
+    background-blend-mode: multiply;
+}
+.bg-blog-back{
+    margin: auto;
+    background:  rgb(19, 18, 18);
+    opacity: 70%;
+    background-blend-mode: multiply;
+}
+.bg-blog-back h2{
+    opacity: 100%;
+    background-blend-mode: normal;
+}
+.font-20{
+font-size: 50px;
+}
+.font-10{
+font-size: 25px;
+}
+.font-play{
+font-size: 80px;
+margin: 0;
+padding: 0;
+}
+.link-n{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 20px;
+}
+.btn-margin{
+    margin-top: 270px;
 }

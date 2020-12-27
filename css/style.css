@@ -20,12 +20,10 @@ li{
     margin: auto;
     margin-bottom: 20px;
 }
-.divider_full{
+.divider-full{
     background: #ffc107;
-  
     width: 350px;
     height: 5px;
-
     margin: auto;
     margin-bottom: 20px;
 }

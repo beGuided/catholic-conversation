@@ -34,9 +34,7 @@ li{
     list-style-type: none;
 }
 .slider{
-    margin: 0;
-    background: brown;
-    position: absolute;
+    height: 450pxpx;
 }
 .divider{
 

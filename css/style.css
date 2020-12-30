@@ -35,7 +35,6 @@ li{
 }
 .slider{
     margin: 0;
-    height: 44px ;
     background: brown;
     position: absolute;
 }
@@ -49,9 +48,8 @@ li{
 }
 .divider_full{
     background: #ffc107;
-  
     width: 1000px;
-    height: 5px;
+    height: 3px;
 
     margin: auto;
     margin-bottom: 20px;
@@ -66,9 +64,9 @@ li{
 .bg-image{
     margin: auto;
     height: 450px;
-    width: 1250px;
-    background: url(../assets/images/blog/dylan-gillis-KdeqA3aTnBY-unsplash-1@3x.png) no-repeat;
-    background-size: cover;
+    /* width: 1250px; */
+    /* background: url(../assets/images/blog/dylan-gillis-KdeqA3aTnBY-unsplash-1@3x.png) no-repeat;*/
+    background-size: cover; 
 }
 .bg-slant{
     margin: auto;
@@ -83,17 +81,17 @@ li{
     background-blend-mode: multiply;
 }
 .bg-book1{
-    height: 400px;
-    background: url(../assets/images/blog/ryoji-iwata-IBaVuZsJJTo-unsplash@3x.png) no-repeat rgb(117, 116, 116);
-    background-size: cover;   
+    /* height: 400px; */
+    /* background: url(../assets/images/blog/ryoji-iwata-IBaVuZsJJTo-unsplash@3x.png) no-repeat rgb(117, 116, 116);
+    background-size: cover;    */
     background-blend-mode: multiply;
 }
 .bg-blog{
     height: 500px;
     width: 400px;
-    background: url(../assets/images/blog/rosary.png) no-repeat rgb(117, 116, 116);
+    /* background: url(../assets/images/blog/rosary.png) no-repeat rgb(117, 116, 116);
     background-size: cover;   
-    background-blend-mode: multiply;
+    background-blend-mode: multiply; */
 }
 .bg-blog-full{
     height: 500px;
@@ -103,6 +101,7 @@ li{
     background-blend-mode: multiply;
 }
 .bg-blog-back{
+    
     margin: auto;
     background:  rgb(19, 18, 18);
     opacity: 70%;

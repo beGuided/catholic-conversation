@@ -1,66 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Podcasts--catholic Conversations</title>
-
-    <!---------------------------->
-    <!-----------CSS Links start-->
-    <!---------------------------->
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="/assets/icons/font-awesome/css/font-awesome.min.css">
-
-
-    <!---------------------------->
-    <!-----------CSS Links end-->
-    <!---------------------------->
-</head>
-
-<body>
-    <header>
+<?php include "includes/header.php"?>
 
 
 
-        <!-- nav section start -->
-
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 ">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="" alt="logo"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                        <li class="nav-item ">
-                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="blog.html">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="podcasts.html">podcast</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="books.html">Books</a>
-                        </li>
-
-                    </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                </div>
-            </div>
-        </nav> <!-- nav section end -->
+ <!-- nav section start -->
+ <?php include "includes/nav.php"?> 
+  <!-- nav section end -->
 
     </header>
 
@@ -101,17 +45,17 @@
 
 
             <!-- col 1 -->
-            <div class="m-auto col-lg-4 col-md-12 col-sm-12">
+            <div class="m-auto col-lg-4 col-md-4 col-sm-12">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active m-1">
-                            <img src="/assets/images/blog/PODCAST.png" class="d-block img-fluid  w-100" alt="...">
+                            <img src="assets/images/blog/PODCAST.png" class="d-block img-fluid  w-100"  alt="images">
                         </div>
                         <div class="carousel-item m-1">
-                            <img src="/assets/images/blog/PODCAST.png" class="d-block img-fluid  w-100" alt="...">
+                            <img src="assets/images/blog/PODCAST.png" class="d-block img-fluid  w-100"  alt="images">
                         </div>
                         <div class="carousel-item m-1">
-                            <img src="/assets/images/blog/PODCAST.png" class="d-block img-fluid  w-100" alt="...">
+                            <img src="assets/images/blog/PODCAST.png" class="d-block img-fluid  w-100"  alt="images">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
@@ -128,20 +72,20 @@
 
 
             <!-- col 2 -->
-            <div class="col-lg-4 col-0">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active m-1">
-                            <img src="/assets/images/blog/PODCAST.png" class="d-block img-fluid bg-book1 w-100"
-                                alt="...">
+                            <img src="assets/images/blog/PODCAST.png" class="d-block img-fluid bg-book1 w-100"
+                            alt="images">
                         </div>
                         <div class="carousel-item m-1">
-                            <img src="/assets/images/blog/PODCAST.png" class="d-block img-fluid bg-book1 w-100"
-                                alt="...">
+                            <img src="assets/images/blog/PODCAST.png" class="d-block img-fluid bg-book1 w-100"
+                            alt="images">
                         </div>
                         <div class="carousel-item m-1">
-                            <img src="/assets/images/blog/PODCAST.png" class="d-block img-fluid bg-book1 w-100"
-                                alt="...">
+                            <img src="assets/images/blog/PODCAST.png" class="d-block img-fluid bg-book1 w-100"
+                            alt="images">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
@@ -158,20 +102,20 @@
 
 
             <!-- col 3 -->
-            <div class="col-lg-4 col-md-0 col-sm-0">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active m-1">
-                            <img src="/assets/images/blog/PODCAST.png" class="d-block img-fluid bg-book1 w-100"
-                                alt="...">
+                            <img src="assets/images/blog/PODCAST.png" class="d-block img-fluid bg-book1 w-100"
+                                alt="images">
                         </div>
                         <div class="carousel-item m-1">
-                            <img src="/assets/images/blog/PODCAST.png" class="d-block img-fluid bg-book1 w-100"
-                                alt="...">
+                            <img src="assets/images/blog/PODCAST.png" class="d-block img-fluid bg-book1 w-100"
+                                 alt="images">
                         </div>
                         <div class="carousel-item m-1">
-                            <img src="/assets/images/blog/PODCAST.png" class="d-block img-fluid bg-book1 w-100"
-                                alt="...">
+                            <img src="assets/images/blog/PODCAST.png" class="d-block img-fluid bg-book1 w-100"
+                                 alt="images">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
@@ -382,131 +326,12 @@
 
 
 
-    <!--------->
+     <!--------->
     <!-- footer start -->
     <!--------->
 
-    <footer class="container-fluid bg-dark">
-        <div class="container p-5">
-            <div class="row text-white">
+<?php include "includes/footer.php"?>
 
-                <!---------->
-                <!-- left column start -->
-                <!---------->
-                <div class="col-lg-6 col-md-12 col-sm-12  p-5">
-                    <img src="" alt="logo">
-                    <h2><b class=" text-white">Catholic Conversation</b></h2>
-                    <p class=" text-white">To reform. Every day a little. This has to be your constant task if you
-                        really want to become a
-                        saint. (The Way 290, St. Josemaria Escriva).
-                        <a href="mailto:catholicconversations@yahoo.com"
-                            class="text-warning">catholicconversations@yahoo.com</a>
-                    </p>
-                    <br>
-                    <h2><b class=" text-white">Contact Us</b></h2>
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="row">
-                                <div class="col-2">
-                                    <i class="text-warning fa fa-phone"></i>
-                                </div>
-                                <div class="col-10">
-                                    <a href="tel:+2348012345678" class="text-warning">+2348012345678</a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="row ">
-                                <div class="col-2">
-                                    <i class="text-warning fa fa-envelope"></i>
-
-                                </div>
-                                <div class="col-10">
-
-                                    <a href="mailto:catholicconversations@gmail.com"
-                                        class="text-warning">catholicconversations@gmail.com</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!---------->
-                <!-- left column end -->
-                <!---------->
-
-
-                <!---------->
-                <!-- Right column start -->
-                <!---------->
-
-                <div class="col-lg-6 col-md-12 col-sm-12 p-5">
-                    <h2><b class=" text-white">FAQ</b></h2>
-                    <p class=" text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ex ut,
-                        sunt assumenda fuga
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, perferendis. Repellat,
-                        consectetur. Similique nulla molestias, ad qui sequi expedita omnis deserunt dolore eius
-                        necessitatibus totam libero consectetur ratione deleniti aliquid.
-                        voluptas. Quaerat aliquid sed, dolores asperiores vitae, soluta, ratione repudiandae omnis
-                        cumque maiores ipsa. Facilis, et?
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem itaque dolore illo facere
-                        quibusdam animi nisi, quisquam, rem fugiat voluptatum incidunt eligendi! Nobis neque iste quas
-                        esse animi saepe nulla!
-                    </p>
-                </div>
-
-
-                <!---------->
-                <!-- right column end -->
-                <!---------->
-            </div>
-            <div class="divider_full img-fluid"></div>
-            <div class="row m-auto">
-                <div class="col-lg-5 col-md-3 "></div>
-                <div class="col-1 col-lg-1 col-md-2 col-sm-4  text-center">
-                    <i class="fa fa-whatsapp text-dark bg-warning btn px-4 py-3"></i>
-                </div>
-                <div class="col-1 col-lg-1 col-md-2 col-sm-4  text-center">
-                    <i class="fa fa-play text-dark bg-warning btn px-4 py-3"></i>
-                </div>
-                <div class="col-1 col-lg-1 col-md-2 col-sm-4  text-center">
-                    <i class="fa fa-video-camera text-dark bg-warning btn px-4 py-3"></i>
-                </div>
-                <div class="col-lg-0  col-md-0  "></div>
-            </div>
-            <h6 class="text-center mt-4"><small class=" text-white">All rights reserved. © 2020 Catholic
-                    Conversations</small>
-            </h6>
-        </div>
-    </footer>
-
-    <!--------->
-    <!-- footer end -->
-    <!--------->
-
-
-
-
-
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-
-    <script src="js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
+<!--------->
+<!-- footer end -->
+<!---------> 

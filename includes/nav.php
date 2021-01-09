@@ -22,13 +22,22 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="books.php">Books</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="admin/">Admin</a>
+                        </li>
 
                     </ul>
                     <?php 
+
                     if(isset($_POST['submit'])){
                         $search = $_POST['search']; 
 
-                        $query = "SELECT * FROM post WHERE post_tag LIKE '%$search%' ";
+     
+
+
+                        $query = "(SELECT post_tag, 'post' as type FROM post  WHERE post_tag LIKE '%" . $search ."%' )
+                        UNION
+                        (SELECT blog_post_tag, 'blog' as type FROM blog_post WHERE blog_post_tag LIKE '%$search%')";
 
                         $search_query = mysqli_query($connection, $query);
                         if(!$search_query){

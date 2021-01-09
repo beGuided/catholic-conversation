@@ -167,10 +167,10 @@ while($row = mysqli_fetch_assoc($search_query)){
         <!-- card 3-->
         <!-- <div class="col-12 col-sm-12 col-md-4 col-lg-4 my-4"> -->
         <div class="container  ">
-            <div class="row">
+            <div classg="row">
          <?php 
-        
-$query = 'SELECT * FROM blog_post';
+  $query = "SELECT * FROM blog_post WHERE blog_post_tag LIKE '%$search%' ";
+
 
 $blogPost_query = mysqli_query($connection,$query);
 

@@ -125,7 +125,7 @@ while($row = mysqli_fetch_assoc($Video_post_query)){
 
     ?>
                         <div class="col-md-2 col-lg-2 col-sm-12 col-xl-2 m-1">
-                        <a href="#"><img src="assets/images/blog/dylan-gillis-KdeqA3aTnBY-unsplash.png"
+                        <a href="#"><img src="assets/images/<?php echo $post_image?> "
                                     class="img-fluid mb-4" alt=""> </a>       
                             <div >
                                 <h3><?php echo $post_title?> </h3>

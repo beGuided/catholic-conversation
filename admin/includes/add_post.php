@@ -107,6 +107,6 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
 
   <div class="form-group">
          
-          <input class="btn-primary" type="submit" name="create_post" value="Publish_post">
+          <input class="btn-warning" type="submit" name="create_post" value="Publish_post">
          </div>
 </form>

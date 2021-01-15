@@ -40,10 +40,10 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#Video_post"><i class="fa fa-fw fa-arrows-v"></i>  video post <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="Video_post" class="collapse">
                             <li>
-                                <a href="./posts.php">View all post</a>
+                                <a href="./posts.php">All Video Post</a>
                             </li>
                             <li>
-                                <a href="#">Add Post</a>
+                                <a href="./posts.php?source=add_post">Add Post</a>
                             </li>
                         </ul>
                     </li>
@@ -51,10 +51,10 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#blog_post"><i class="fa fa-fw fa-arrows-v"></i> Blog post <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="blog_post" class="collapse">
                             <li>
-                                <a href="#">View all post</a>
+                                <a href="./posts.php?source=view_blog_post"> All Blog Post</a>
                             </li>
                             <li>
-                                <a href="#">Add Post</a>
+                                <a href="./posts.php?source=add_blog_post">Add Post</a>
                             </li>
                         </ul>
                     </li>

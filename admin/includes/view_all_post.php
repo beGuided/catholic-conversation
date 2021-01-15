@@ -1,5 +1,6 @@
 
-                        <table class="table table-bordered table-hover">
+               <div class="col-lg-12 col-sm-12 table-responsive">  
+               <table class="table table-bordered table-hover ">
                         <thead>                 
                         <tr>
                         <th>Id</th>
@@ -7,7 +8,7 @@
                         <th>Title</th>
                         <th>Topic</th>
                         <th>Vid link</th>
-                        <th>Slid link</th>
+                        <th>Slide link</th>
                         <th>Categories</th>
                         <th>Status</th>
                         <th>Images</th> 
@@ -18,7 +19,7 @@
                         <th>Delete</th>
                         </tr></thead>
                         <tbody>
-
+                                             
                         <?php 
 
                         $query = 'SELECT * FROM post';
@@ -58,7 +59,25 @@
                         echo "</tr>";
                         }?>
                        
+
                         
                         </tbody>
                         
-                        </table>      
+                        </table>    
+                        
+
+                        <?php 
+
+if (isset($_GET['delete'])) {
+    
+$the_post_id = $_GET['delete'];
+
+$query="DELETE FROM post WHERE post_id = {$the_post_id}";   
+
+    $delete_query= mysqli_query($connection,$query );
+    header("Location:posts.php");
+
+
+}
+     ?>
+                        </div >

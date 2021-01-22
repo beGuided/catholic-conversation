@@ -14,15 +14,15 @@ $blog_post_image_temp = $_FILES['image']['tmp_name'];
 $blog_post_details = $_POST['blog_post_details'];
 $blog_post_tag = $_POST['blog_post_tag'];
 $blog_Post_date = date('d-m-y');
-$blog_post_comment_count = 4;
+//$blog_post_comment_count = 4;
 
 
  move_uploaded_file($blog_post_image_temp, "../assets/images/blog/$blog_post_image");
 
 $query = "INSERT INTO blog_post( blog_post_category_id, 
-blog_post_title, blog_post_author, blog_post_date, blog_post_image, blog_post_details, blog_post_tag, blog_post_status, blog_post_comment_count)";  
+blog_post_title, blog_post_author, blog_post_date, blog_post_image, blog_post_details, blog_post_tag, blog_post_status)";
 $query.="VALUES({$blog_post_category_id},'{$blog_post_title}', 
-'{$blog_post_author}',now(),'{$blog_post_image}','{$blog_post_details}','{$blog_post_tag}','{$blog_post_status}', {$blog_post_comment_count})";
+'{$blog_post_author}',now(),'{$blog_post_image}','{$blog_post_details}','{$blog_post_tag}','{$blog_post_status}',  )";
 
 $Create_post_query= mysqli_query($connection, $query);
 

@@ -13,8 +13,6 @@ if(!$result){
 
 
 
-
-
 function insert_categories(){
    global $connection;
     if(isset($_POST['submit'])){

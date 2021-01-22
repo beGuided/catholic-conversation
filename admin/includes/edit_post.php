@@ -38,18 +38,29 @@ $post_slide_link = $_POST['post_slide_link'];
 $post_category_id = $_POST['post_category_id'];
 $post_status = $_POST['post_status'];
 
-$post_image = "";
-$post_comment_count=2;
-// $post_image = $_FILES['Image']['name'];
-// $post_image_temp = $_FILES['Image']['tmp_name'];
+
+$post_image = $_FILES['Image']['name'];
+$post_image_temp = $_FILES['Image']['tmp_name'];
 
 $post_details = $_POST['post_details'];
 $post_tag = $_POST['post_tag'];
 $Post_date = date('d-m-y');
-$post_comment_count = 4;
 
 
-// move_uploaded_file($post_image_temp, "../assets/images/blog/$post_image");
+
+ move_uploaded_file($post_image_temp, "../assets/images/blog/$post_image");
+ 
+ if(empty($post_image)){
+
+  $query = "SELECT * FROM post WHERE post_id = $the_post_id";
+  $select_image = mysqli_query($connection, $query);
+  while ($row = mysqli_fetch_assoc($select_image)) {
+    $post_image =$row['post_image'];
+  }
+}
+
+
+
 
 $query = " UPDATE post SET ";
 $query .="post_title= '{$post_title}', ";
@@ -69,8 +80,6 @@ confirm_query($Update_Post);
 
 echo "<p class='bg-success'>Post updated.
  <a href='../posts.php?p_id={$the_post_id}'>view Post</a></p>";
-
-
 
 }
 
@@ -107,6 +116,14 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
 
          </select>
 </div>
+
+
+
+<div class="form-group">
+         <label for="blog_post_image">Post Image</label>
+         <img width=100 src="../assets/images/blog/<?php $post_image?>"/>
+         <input type="file"  name="Image">
+         </div>
 
         <div class="form-group">    
          <label for="post_video_link">Post Video link</label>

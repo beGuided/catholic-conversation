@@ -9,12 +9,6 @@ navigation -->
 
         <div id="page-wrapper">
 
-        <?php if($connection){
-            echo 'helloworld';
-        } ?>
-
-
-
             <div class="container-fluid">
 
                 <!-- Page Heading -->

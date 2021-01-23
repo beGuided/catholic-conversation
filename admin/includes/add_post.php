@@ -11,21 +11,20 @@ $post_slide_link = $_POST['post_slide_link'];
 $post_category_id = $_POST['post_category'];
 $post_status = $_POST['post_status'];
 
-$post_image = "";
-$post_comment_count=2;
-// $post_image = $_FILES['Image']['name'];
-// $post_image_temp = $_FILES['Image']['tmp_name'];
+
+$post_image = $_FILES['Image']['name'];
+$post_image_temp = $_FILES['Image']['tmp_name'];
 
 $post_details = $_POST['post_details'];
 $post_tag = $_POST['post_tag'];
 $Post_date = date('d-m-y');
-$post_comment_count = 4;
+//$post_comment_count = 4;
 
 
-// move_uploaded_file($post_image_temp, "../assets/images/blog/$post_image");
+ move_uploaded_file($post_image_temp, "../assets/images/blog/$post_image");
 
-$query = "INSERT INTO post( post_category_id, post_title, post_topic, post_author, post_video_link, post_slide_link,  post_date, post_image, post_details, post_tag, post_status, post_comment_count)";  
-$query.="VALUES({$post_category_id},'{$post_title}', '{$post_topic}','{$post_author}','{$post_video_link}','{$post_slide_link}',now(),'{$post_image}','{$post_details}','{$post_tag}','{$post_status}', {$post_comment_count})";
+$query = "INSERT INTO post( post_category_id, post_title, post_topic, post_author, post_video_link, post_slide_link,  post_date, post_image, post_details, post_tag, post_status )";
+$query.="VALUES({$post_category_id},'{$post_title}', '{$post_topic}','{$post_author}','{$post_video_link}','{$post_slide_link}',now(),'{$post_image}','{$post_details}','{$post_tag}','{$post_status}', )";
 
 $Create_post_query= mysqli_query($connection, $query);
 
@@ -72,6 +71,12 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
          </select>
 </div>
 
+
+<div class="form-group">
+         <label for="blog_post_image">Post Image</label>
+         <input type="file" name="Image">
+         </div>
+
         <div class="form-group">    
          <label for="post_video_link">Post Video link</label>
           <input class="form-control" type="text" name="post_video_link">
@@ -107,6 +112,6 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
 
   <div class="form-group">
          
-          <input class="btn-primary" type="submit" name="create_post" value="Publish_post">
+          <input class="btn-warning" type="submit" name="create_post" value="Publish_post">
          </div>
 </form>

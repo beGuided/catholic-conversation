@@ -100,7 +100,7 @@
             <div class="row">
                 <?php
 
-                $query = 'SELECT * FROM post';
+                $query = "SELECT * FROM post WHERE post_status='published'";
 
                 $Video_post_query = mysqli_query($connection, $query);
                 if (!$Video_post_query) {
@@ -115,7 +115,12 @@
                     $post_slide = $row['post_slide_link'];
                     $post_image = $row['post_image'];
                     $post_video_link = $row['post_video_link'];
+                    $post_status = $row['post_status'];
 
+
+                if($post_status!=='published'){
+                    echo"<h1>no post</h1>";
+                }else{
                     ?>
                     <div class="col-md-2 col-lg-2 col-sm-12 col-xl-2 m-1">
                         <a href="post.php?source=post_details&p_id=<?php echo $post_id ?>">
@@ -133,7 +138,7 @@
                         </div>
                     </div>
 
-                <?php } ?>
+                <?php } }?>
 
 
             </div>
@@ -163,7 +168,7 @@
         <div class="row">
             <?php
 
-            $query = "SELECT * FROM blog_post WHERE blog_post_status='publish'";
+            $query = "SELECT * FROM blog_post WHERE blog_post_status='published'";
 
             $blogPost_query = mysqli_query($connection, $query);
 
@@ -177,19 +182,11 @@
                 $blog_post_details = substr($row['blog_post_details'],0,200);
                 $blog_post_status = $row['blog_post_status'];
 
-
-
-//                if($blog_post_status!=='published'){
-//                    echo"<h1>no post</h1>";
-//                }else{
-//
-//                }
-
-
-
+                if($blog_post_status!=='published'){
+                    echo"<h1>no post</h1>";
+                }else{
 
                 ?>
-
                 <div class="card my-3">
                     <div class="row g-1">
                         <div class="col-md-5">
@@ -204,16 +201,12 @@
                                     <?php echo $blog_post_details ?>
                                 </p>
                                 <button class="btn  btn-warning px-5 text-white"><b>></b></button>
-
-
                             </div>
-
-
                         </div>
                     </div>
                 </div>
 
-            <?php } ?>
+            <?php }} ?>
 
 
         </div>
@@ -253,7 +246,7 @@
             <div class="col-12  ">
                 <div class="card " style="width:auto;">
                     <img src=" assets/images/blog/dylan-gillis-KdeqA3aTnBY-unsplash-1@3x.png "
-                         class="card-img-top " alt="image">
+                         class="card-img-top"  style="max-height: 400px" alt="image">
                     <div class="my-4"></div>
                     <div class="card-body text-center px-4">
                         <h3 class="card-title">Doctrinal Classes with Young Men</h3>
@@ -294,8 +287,8 @@
         <div class="row ">
             <div class="col-12  ">
                 <div class="card " >
-                    <div ><img src=" assets/images/blog/dylan-gillis-KdeqA3aTnBY-unsplash-1@3x.png "
-                              class="card-img-top   alt="image"></div>
+                    <img src=" assets/images/blog/dylan-gillis-KdeqA3aTnBY-unsplash-1@3x.png "
+                              class="card-img-top "  style="max-height: 400px"  alt="image">
 
                     <div class="my-4"></div>
                     <div class="card-body text-center px-4">
@@ -370,11 +363,11 @@
 <!--------->
 <!-- updates start -->
 <!--------->
-<div class="container-fluid">
-    <div class="container mt-5 mb-5 p-5 bg-light">
+<div class="container-fluid p-4">
+    <div class="container p-4 bg-light">
         <h3 class="text-center"><b>Receive updates from Catholic Conversations</b></h3>
         <div class="d-flex form-group text-center mt-5">
-            <input type="email" class="form-control w-50 py-1 m-0" name="email" id="email"
+            <input type="email" class="form-control " name="email" id="email"
                    placeholder="Enter e-mail here"/>
             <button type="submit" class=" btn-warning btn"><b>SUBSCRIBE</b></button>
         </div>

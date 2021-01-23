@@ -37,7 +37,7 @@
                 <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
             </li>
             <li>
-                <a href="javascript:;" data-toggle="collapse" data-target="#Video_post"><i
+                <a href="javascript:" data-toggle="collapse" data-target="#Video_post"><i
                             class="fa fa-fw fa-arrows-v"></i> video post <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="Video_post" class="collapse">
                     <li>
@@ -49,7 +49,7 @@
                 </ul>
             </li>
             <li>
-                <a href="javascript:;" data-toggle="collapse" data-target="#blog_post"><i
+                <a href="javascript:" data-toggle="collapse" data-target="#blog_post"><i
                             class="fa fa-fw fa-arrows-v"></i> Blog post <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="blog_post" class="collapse">
                     <li>
@@ -67,20 +67,20 @@
                 <a href="comment.php"><i class="fa fa-fw fa-desktop"></i> Comments</a>
             </li>
             <li>
-                <a href="javascript:;" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-arrows-v"></i>
+                <a href="javascript:" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-arrows-v"></i>
                     Users <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="users" class="collapse">
                     <li>
-                        <a href="#">View User</a>
+                        <a href="users.php">View Users</a>
                     </li>
                     <li>
-                        <a href="#">Add Users</a>
+                        <a href="./users.php?source=add_blog_post">Add Users</a>
                     </li>
                 </ul>
             </li>
 
             <li>
-                <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                <a href="#"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
             </li>
         </ul>
     </div>

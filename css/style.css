@@ -66,6 +66,9 @@ li{
     /* background: url(../assets/images/blog/dylan-gillis-KdeqA3aTnBY-unsplash-1@3x.png) no-repeat;*/
     background-size: cover; 
 }
+.card-img{
+    height: 70px;
+}
 .bg-slant{
     margin: auto;
     width: 100%;

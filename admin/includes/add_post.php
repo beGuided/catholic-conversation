@@ -2,7 +2,6 @@
 <?php 
 
 if(isset($_POST['create_post'])){
-
 $post_author = $_POST['post_author'];
 $post_topic = $_POST['post_topic'];
 $post_title = $_POST['post_title'];
@@ -18,20 +17,18 @@ $post_image_temp = $_FILES['Image']['tmp_name'];
 $post_details = $_POST['post_details'];
 $post_tag = $_POST['post_tag'];
 $Post_date = date('d-m-y');
-//$post_comment_count = 4;
+
 
 
  move_uploaded_file($post_image_temp, "../assets/images/blog/$post_image");
 
-$query = "INSERT INTO post( post_category_id, post_title, post_topic, post_author, post_video_link, post_slide_link,  post_date, post_image, post_details, post_tag, post_status )";
-$query.="VALUES({$post_category_id},'{$post_title}', '{$post_topic}','{$post_author}','{$post_video_link}','{$post_slide_link}',now(),'{$post_image}','{$post_details}','{$post_tag}','{$post_status}', )";
+$query = "INSERT INTO post( post_category_id, post_title, post_topic, post_author, post_video_link, post_slide_link, post_date, post_image, post_details, post_tag, post_status)";
+$query.="VALUES({$post_category_id},'{$post_title}', '{$post_topic}','{$post_author}','{$post_video_link}','{$post_slide_link}',now(),'{$post_image}','{$post_details}','{$post_tag}','{$post_status}')";
 
 $Create_post_query= mysqli_query($connection, $query);
 
 confirm_query($Create_post_query);
-
- 
-
+    echo "Post Created" . " " . "<a href='posts.php'>view post</a>";
 
 }
 
@@ -94,7 +91,11 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
 
          <div class="form-group">
          <label for="post_status">Post Status</label>
-          <input class="form-control" type="text" name="post_status">
+             <select name="post_status" >
+                 <option value="draft"> select option</option>
+                 <option value="published">Publish</option>
+                 <option value="draft">Draft</option>
+             </select>
          </div>
 
         
@@ -107,7 +108,7 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
 
            <div class="form-group">
          <label for="post_details">Post details</label>
-          <textarea class="form-control"  name="post_details" cols="30" row="10"></textarea>
+          <textarea class="form-control"  name="post_details" id="body" cols="30" rows="10"></textarea>
          </div>
 
   <div class="form-group">

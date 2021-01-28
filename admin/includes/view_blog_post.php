@@ -1,8 +1,52 @@
+<?php include "../includes/db.php"?>
 
-               <div class="col-lg-12 col-sm-12 table-responsive">  
-               <table class="table table-bordered table-hover ">
-                        <thead>                 
-                        <tr>
+<?php
+if(isset($_POST['checkBoxesArray'])){
+    foreach ($_POST['checkBoxesArray'] as $postValueId) {
+        $bulk_options =$_POST['bulk_options'];
+
+        switch($bulk_options){
+            case 'draft':
+                $query="UPDATE blog_post SET blog_post_status = '{$bulk_options}' WHERE blog_post_id= {$postValueId}";
+                $update_to_publish_status =mysqli_query($connection, $query);
+                confirm_query($update_to_publish_status);
+                break;
+            case 'published':
+                $query="UPDATE blog_post SET blog_post_status = '{$bulk_options}' WHERE blog_post_id= {$postValueId}";
+                $update_to_publish_status =mysqli_query($connection, $query);
+                confirm_query($update_to_publish_status);
+                break;
+
+            case 'delete':
+                $query="DELETE FROM blog_post WHERE blog_post_id = {$postValueId}";
+                $delete_query= mysqli_query($connection,$query );
+                header("Location:posts.php");
+                confirm_query($update_to_publish_status);
+        }
+    }
+}
+?>
+<div class="table-responsive">
+<form action="" method="post">
+    <div class="table table-bordered table-hover">
+
+        <div id ="bulkOptionsContainer" class="col-xs-4">
+            <select class="form-control" name="bulk_options" id="">
+                <option value="">Select Option</option>
+                <option value="published">Publish</option>
+                <option value="draft">Draft</option>
+                <option value="delete">Delete</option>
+            </select>
+        </div>
+        <div class="col-xs-4">
+            <input type="submit" name="submit" class="btn btn-success" value="Apply">
+            <a class="btn btn-primary" href="./posts.php?source=add_blog_post">Add New</a>
+        </div>
+        <form class="col-lg-12 col-sm-12 table-responsive">
+            <table class="table table-bordered table-hover ">
+                <thead>
+                <tr>
+                    <th><input id='selectAll' type="checkbox" name=''></th>
                         <th>Id</th>
                         <th>Author</th>
                         <th>Title</th>
@@ -32,8 +76,10 @@
                             $blog_post_tag = $row['blog_post_tag'];
                             $blog_post_comment_count = $row['blog_post_comment_count'];
                             $blog_post_date = $row['blog_post_date'];
-                       
-                         echo "<tr>";
+                             echo "<tr>";
+                             ?>
+                             <td> <input class='checkBoxes' type='checkbox' name='checkBoxesArray[]' value='<?php echo $blog_post_id;?>'></td>
+                             <?php
                          echo"<td>$blog_post_id</td>";
                          echo"<td>$blog_post_author</td>";
                          echo"<td>$blog_post_title</td>";
@@ -56,12 +102,10 @@
                      
                         echo "</tr>";
                         }?>
-                       
 
-                        
                         </tbody>
-                        
-                        </table>    
+                        </table>
+        </form>
                         
 
                         <?php 
@@ -79,4 +123,4 @@ $query="DELETE FROM blog_post WHERE blog_post_id = {$blog_post_id}";
 
 }
      ?>
-                        </div >
+    </div>

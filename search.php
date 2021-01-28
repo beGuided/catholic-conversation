@@ -87,10 +87,6 @@
 
     <section>
 
-
-
-
-
         <!-- latest conversaton trends start-->
         <div class="container-fluid bg-slant">
 
@@ -104,17 +100,11 @@
                 <!-- label -->
             
                     <div class="row">
-
-                                        
                 <?php
 
-
-$query = "SELECT * FROM post WHERE post_tag LIKE '%$search%' ";
-
+$query = "SELECT * FROM post WHERE post_tag LIKE '%$search%' AND post_status='published' ";
 $search_query = mysqli_query($connection, $query);
-if(!$search_query){
-    die('query fialed'. mysqli_error($connection));
-     }
+confirm_query($search_query);
 while($row = mysqli_fetch_assoc($search_query)){
     $post_title=$row['post_title'];
     $post_topic=$row['post_topic'];
@@ -139,11 +129,9 @@ while($row = mysqli_fetch_assoc($search_query)){
 
             <?php } ?>
                   
-            
-            </div>
 
             </div>
-        </div>
+
 
         <!-- latest conversaton trends end-->
 
@@ -169,7 +157,7 @@ while($row = mysqli_fetch_assoc($search_query)){
         <div class="container  ">
             <div classg="row">
          <?php 
-  $query = "SELECT * FROM blog_post WHERE blog_post_tag LIKE '%$search%' ";
+  $query = "SELECT * FROM blog_post WHERE blog_post_tag LIKE '%$search%' AND  blog_post_status='published'";
 
 
 $blogPost_query = mysqli_query($connection,$query);

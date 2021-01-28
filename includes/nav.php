@@ -1,4 +1,6 @@
 <?php include "db.php"?>
+<?php //include "function.php"?>
+
 
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 ">
             <div class="container-fluid">
@@ -25,25 +27,24 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="admin/">Admin</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="login.php">login</a>
+                        </li>
 
                     </ul>
                     <?php 
 
                     if(isset($_POST['submit'])){
-                        $search = $_POST['search']; 
+                        $search = $_POST['search'];
 
-     
-
-
-                        $query = "(SELECT post_tag, 'post' as type FROM post  WHERE post_tag LIKE '%" . $search ."%' )
+                        $query = "(SELECT post_tag, 'post' as type FROM post  WHERE post_tag LIKE '%$search %' )
                         UNION
                         (SELECT blog_post_tag, 'blog' as type FROM blog_post WHERE blog_post_tag LIKE '%$search%')";
 
                         $search_query = mysqli_query($connection, $query);
                         if(!$search_query){
-                            die('query fialed'. mysqli_error($connection));
-                             }
-
+                            die('failed query'.mysqli_error($connection));
+                        }
                         $count = mysqli_num_rows($search_query);
                         if($count == 0){
                             echo " <h1> no result</h1>"; 
@@ -54,11 +55,9 @@
                     }  
                     
                     ?>
-
-
                     <form class="d-flex" action="search.php" method="post">
                         <input class="form-control me-2" type="search" name= "search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-warning" name= "submit" type="submit">video Search</button>
+                        <button class="btn btn-outline-warning" name= "submit" type="submit">Search</button>
                     </form>
                 </div>
             </div>

@@ -125,12 +125,13 @@
                     <div class="col-md-2 col-lg-2 col-sm-12 col-xl-2 m-1">
                         <a href="post.php?source=post_details&p_id=<?php echo $post_id ?>">
                             <img src="assets/images/blog/<?php echo $post_image ?>" alt="img" class="img-fluid w-100"/>
-                        </a>
+
                         <div>
                             <h3><?php echo $post_title ?> </h3>
                             <p><?php echo $post_topic ?> <span
                                         class="text-danger textblack"> <?php echo $post_details ?> </span></p>
                         </div>
+                        </a>
                         <div>
                             <p><i class="text-warning fa fa-video-camera"></i>
                                 <span class="text-danger textblack"> <a target="blank" href="<?php echo $post_slide ?>">download slide link</a> </span>
@@ -200,7 +201,9 @@
                                 <p class="text-center">
                                     <?php echo $blog_post_details ?>
                                 </p>
+                                <a href="post.php?source=blog_post_details&p_id=<?php echo $blog_post_id ?>">
                                 <button class="btn  btn-warning px-5 text-white"><b>></b></button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -363,17 +366,7 @@
 <!--------->
 <!-- updates start -->
 <!--------->
-<div class="container-fluid p-4">
-    <div class="container p-4 bg-light">
-        <h3 class="text-center"><b>Receive updates from Catholic Conversations</b></h3>
-        <div class="d-flex form-group text-center mt-5">
-            <input type="email" class="form-control " name="email" id="email"
-                   placeholder="Enter e-mail here"/>
-            <button type="submit" class=" btn-warning btn"><b>SUBSCRIBE</b></button>
-        </div>
-
-    </div>
-</div>
+<?php include "includes/subscribe.php"?>
 <!--------->
 <!-- updates end -->
 <!--------->

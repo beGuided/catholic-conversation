@@ -2,7 +2,6 @@
 <?php 
 
 if(isset($_POST['create_post'])){
-
 $blog_post_author = $_POST['blog_post_author'];
 $blog_post_title = $_POST['blog_post_title'];
 $blog_post_category_id = $_POST['blog_post_category_id'];
@@ -14,23 +13,18 @@ $blog_post_image_temp = $_FILES['image']['tmp_name'];
 $blog_post_details = $_POST['blog_post_details'];
 $blog_post_tag = $_POST['blog_post_tag'];
 $blog_Post_date = date('d-m-y');
-//$blog_post_comment_count = 4;
 
 
  move_uploaded_file($blog_post_image_temp, "../assets/images/blog/$blog_post_image");
 
-$query = "INSERT INTO blog_post( blog_post_category_id, 
-blog_post_title, blog_post_author, blog_post_date, blog_post_image, blog_post_details, blog_post_tag, blog_post_status)";
-$query.="VALUES({$blog_post_category_id},'{$blog_post_title}', 
-'{$blog_post_author}',now(),'{$blog_post_image}','{$blog_post_details}','{$blog_post_tag}','{$blog_post_status}',  )";
+$query = "INSERT INTO blog_post( blog_post_category_id, blog_post_title, blog_post_author, blog_post_date, blog_post_image, blog_post_details, blog_post_tag, blog_post_status)";
+$query.="VALUES({$blog_post_category_id},'{$blog_post_title}','{$blog_post_author}',now(),'{$blog_post_image}','{$blog_post_details}','{$blog_post_tag}','{$blog_post_status}')";
 
 $Create_post_query= mysqli_query($connection, $query);
 
 confirm_query($Create_post_query);
 
- 
-
-
+    echo "post Created" . " " . "<a href='posts.php?source=view_blog_post'>view post</a>";
 }
 
 ?>
@@ -65,10 +59,14 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
           <input class="form-control" type="text" name="blog_post_author">
          </div>
 
-         <div class="form-group">
-         <label for="blog_post_status">Post Status</label>
-          <input class="form-control" type="text" name="blog_post_status">
-         </div>
+    <div class="form-group">
+        <label for="blog_post_status">Post Status</label>
+        <select name="post_status">
+            <option value="draft"> select option</option>
+            <option value="published">Publish</option>
+            <option value="draft">Draft</option>
+        </select>
+    </div>
 
          <div class="form-group">
          <label for="blog_post_image">Blog Post Image</label>
@@ -84,7 +82,7 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
 
            <div class="form-group">
          <label for="blog_post_details">Post details</label>
-          <textarea class="form-control"  name="blog_post_details" cols="30" row="10"></textarea>
+          <textarea class="form-control"  name="blog_post_details" id="body" cols="30" rows="10"></textarea>
          </div>
 
   <div class="form-group">

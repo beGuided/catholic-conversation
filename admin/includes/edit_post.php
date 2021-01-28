@@ -78,8 +78,7 @@ $Update_Post = mysqli_query($connection, $query);
 
 confirm_query($Update_Post);
 
-echo "<p class='bg-success'>Post updated.
- <a href='../posts.php?p_id={$the_post_id}'>view Post</a></p>";
+    echo "Post Updated" . " " . "<a href='posts.php'>view post</a>";
 
 }
 
@@ -112,8 +111,7 @@ $cat_title = $row['cat_title'];
 
 echo "<option value='{$cat_id}'>{$cat_title}</option>";
 }
-?>  
-
+?>
          </select>
 </div>
 
@@ -121,7 +119,7 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
 
 <div class="form-group">
          <label for="blog_post_image">Post Image</label>
-         <img width=100 src="../assets/images/blog/<?php $post_image?>"/>
+         <img width=100 src="../assets/images/blog/<?php echo $post_image?>"/>
          <input type="file"  name="Image">
          </div>
 
@@ -140,12 +138,19 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
           <input class="form-control"  value="<?php echo $post_author?>" type="text" name="post_author">
          </div>
 
-         <div class="form-group">
-         <label for="post_status">Post Status</label>
-          <input class="form-control"  value="<?php echo $post_author?>" type="text" name="post_status">
-         </div>
+    <div class="form-group">
+        <label for="Post status">Post status</label><br>
+        <select name="post_status" id="status">
+            <option value='<?php echo $post_status?>'><?php echo $post_status?></option>"
+            <?php
+            if(post_status == 'published'){
+                echo "<option value='draft'>Draft</option>";
+            }else{  echo "<option value='published'>published</option>";}
+            ?>
 
-        
+        </select>
+    </div>
+
 
            <div class="form-group">
          <label for="post_tag">Post Tags</label>

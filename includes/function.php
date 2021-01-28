@@ -1,26 +1,16 @@
-// <?php
+<?php
 
-// function readPost($field){
-//     global $connection;
-//     $query = 'SELECT * FROM field';
+function escape($string){
+    global $connection;
+    return mysqli_real_escape_string($connection, trim($string));
+}
 
-//     $blogPost_query = mysqli_query($connection,$query);
-//     if(!$blogPost_query){
-//         die('failed query'. mysqli_error($connection));
-//     }else{
-//         echo "<h1>succesful</h1>";
-//     }
+function confirm_query($result){
+    global $connection;
+    if(!$result){
 
-//     while($row = mysqli_fetch_assoc($blogPost_query)){
-//         $blog_post_title=$row['blog_post_title'];
-        
+        die('failed query'.mysqli_error($connection));
+    }
 
-//         echo $blog_post_title;
-//      }
-    
-    
-
-//} 
-
-
-
+}
+?>

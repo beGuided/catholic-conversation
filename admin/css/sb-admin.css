@@ -69,6 +69,7 @@ body {
     background-color: #000;
 }
 
+
 .top-nav>.open>.dropdown-menu {
     float: left;
     position: absolute;
@@ -222,3 +223,7 @@ ul.alert-dropdown {
 .panel-yellow a:hover {
     color: #df8a13;
 }
+#bulkOptionsContainer{
+    padding: 0px;
+}
+

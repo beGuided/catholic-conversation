@@ -16,16 +16,17 @@
 
 
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b
-                        class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
+                <?php
+                if(isset($_SESSION['User_name'])){
+                echo $_SESSION['User_name']; }
+                ?><b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li>
-                    <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-                </li>
+
 
                 <li class="divider"></li>
                 <li>
-                    <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                    <a href="../includes/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                 </li>
             </ul>
         </li>
@@ -74,14 +75,11 @@
                         <a href="users.php">View Users</a>
                     </li>
                     <li>
-                        <a href="./users.php?source=add_blog_post">Add Users</a>
+                        <a href="./users.php?source=add_user">Add Users</a>
                     </li>
                 </ul>
             </li>
 
-            <li>
-                <a href="#"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-            </li>
         </ul>
     </div>
     <!-- /.navbar-collapse -->

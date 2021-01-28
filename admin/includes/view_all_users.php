@@ -70,7 +70,6 @@
 
 <?php
 
-
 if (isset($_GET['change_to_admin'])) {
 
     $the_user_id = $_GET['change_to_admin'];
@@ -90,9 +89,6 @@ if (isset($_GET['change_to_sub'])) {
     $update_user_role= mysqli_query($connection,$query );
     header("Location: users.php ");
 }
-
-
-
 
 if (isset($_GET['delete'])) {
 

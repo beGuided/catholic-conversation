@@ -3,13 +3,16 @@
 
 
         <!-- latest conversaton trends start-->
-        <div class="container-fluid bg-slant">
+        <div class="container-fluid 8 ">
+            <div class="row">
+
+            </div>
 
             <!-- label -->
-            <div class="container mt-5 py-5">
+            <div class="container  col-md-">
 
                     <div class="row text-center m-2">
-                        <h1><b class="textxbold">LATEST CONVERSATION THREADS</b></h1>
+                        <h1><b class="textxbold">videos post </b></h1>
                     </div>
                 
                 <!-- label -->
@@ -41,7 +44,10 @@ while($row = mysqli_fetch_assoc($Video_post_query)){
 
 ?>
         <div class="col-md-2 col-lg-2 col-sm-12 col-xl-2 m-1">
-        <a href="">< <img src="assets/images/blog/<?php echo $post_image?>" alt="img" class="img-fluid w-100" /> </a>       
+            <iframe
+                    src="https://www.youtube.com/embed/<?php echo $post_video_link?>">
+            </iframe>
+<!--        <a href="">< <v src="assets/images/blog/--><?php //echo $post_video_link?><!--" alt="img" class="img-fluid w-100" /> </a>-->
             <div >
                 <h3><?php echo $post_title?> </h3>
                 <p><?php echo $post_topic?> <span class="text-danger textblack"> <?php echo $post_details?> </span></p>
@@ -73,8 +79,6 @@ while($row = mysqli_fetch_assoc($Video_post_query)){
         </div>
 
 
-
-
         <!-------->
         <!-- card 2 end-->
         <!-------->
@@ -85,8 +89,7 @@ while($row = mysqli_fetch_assoc($Video_post_query)){
         <!-------->
         <!-- card 3 end-->
         <!-------->
-        </div>
-        </div>
+
 
         <!-- blog end -->
 

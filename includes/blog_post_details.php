@@ -1,4 +1,5 @@
 <!-- card 3-->
+
 <!-- <div class="col-12 col-sm-12 col-md-4 col-lg-4 my-4"> -->
 <div class="container  ">
     <div class="row">
@@ -119,7 +120,7 @@ while ($row = mysqli_fetch_assoc($select_comment_query)){
     $comment_author = $row['comment_author'];
 
     ?>
-
+<div class=" well container">
     <div class="media">
         <a class="pull-left" href="">
             <img class="media-object" src="" alt="">
@@ -127,6 +128,7 @@ while ($row = mysqli_fetch_assoc($select_comment_query)){
 
         <div class="media-body">
             <h4 class="media-heading">
+
                 <?php echo $comment_author;?>
                 <small>
                     <?php echo $comment_date;?>
@@ -135,6 +137,8 @@ while ($row = mysqli_fetch_assoc($select_comment_query)){
             <?php echo $comment_content; ?>
         </div>
     </div>
+</div>
+
 
 <?php } ?>
 

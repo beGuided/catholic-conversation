@@ -1,5 +1,5 @@
 <?php include "db.php"?>
-<?php session_start();?>
+<?php session_start(); ?>
 <?php include "function.php" ?>
 
 
@@ -18,7 +18,6 @@ if (isset($_POST['login'])) {
     }
 
     while ($row = mysqli_fetch_assoc($select_user_query)) {
-
         $db_user_id = $row['user_id'];
         $db_username = $row['User_name'];
         $db_user_password = $row['user_password'];
@@ -26,21 +25,20 @@ if (isset($_POST['login'])) {
         $db_user_lastName = $row['user_lastName'];
         $db_user_role = $row['user_role'];
 //        echo $db_user_id;
-       //$password = crypt($password, $db_user_password);
+        //$password = crypt($password, $db_user_password);
+    }
     if ($username === $db_username && $password === $db_user_password) {
 
         $_SESSION['User_name'] = $db_username;
         $_SESSION['user_firstname'] = $db_user_firstName;
         $_SESSION['user_lastName'] = $db_user_lastName;
         $_SESSION['user_role'] = $db_user_role;
-
-        header("Location:../admin");
+        header("Location: ../admin");
 
     } else {
-        echo "<h1>wrong password</h1>";
-        header("Location:../index.php");
+        header("Location: ../index.php");
     }
-}
+
 }
 
 //function escape($string){

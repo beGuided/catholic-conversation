@@ -61,7 +61,7 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
 
     <div class="form-group">
         <label for="blog_post_status">Post Status</label>
-        <select name="post_status">
+        <select name="blog_post_status">
             <option value="draft"> select option</option>
             <option value="published">Publish</option>
             <option value="draft">Draft</option>
@@ -82,7 +82,7 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
 
            <div class="form-group">
          <label for="blog_post_details">Post details</label>
-          <textarea class="form-control"  name="blog_post_details" id="body" cols="30" rows="10"></textarea>
+          <textarea class="form-control"  name="blog_post_details" id="body" cols="70" rows="10"></textarea>
          </div>
 
   <div class="form-group">

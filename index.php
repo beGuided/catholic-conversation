@@ -100,7 +100,7 @@
             <div class="row">
                 <?php
 
-                $query = "SELECT * FROM post WHERE post_status='published'";
+                $query = "SELECT * FROM post WHERE post_status='published' LIMIT 4";
 
                 $Video_post_query = mysqli_query($connection, $query);
                 if (!$Video_post_query) {
@@ -122,14 +122,13 @@
                     echo"<h1>no post</h1>";
                 }else{
                     ?>
-                    <div class="col-md-2 col-lg-2 col-sm-12 col-xl-2 m-1">
+                    <div class="col-md-3 col-lg-3 col-sm-12 ">
                         <a href="post.php?source=post_details&p_id=<?php echo $post_id ?>">
-                            <img src="assets/images/blog/<?php echo $post_image ?>" alt="img" class="img-fluid w-100"/>
-
+                            <img src="assets/images/blog/<?php echo $post_image ?>" alt="img" class="img-fluid h-auto w-100"/>
                         <div>
-                            <h3><?php echo $post_title ?> </h3>
-                            <p><?php echo $post_topic ?> <span
-                                        class="text-danger textblack"> <?php echo $post_details ?> </span></p>
+                            <h2><?php echo $post_title ?> </h2>
+                            <p><?php echo $post_topic ?> <span class="text-danger">
+                                    <?php echo $post_details ?></span></p>
                         </div>
                         </a>
                         <div>
@@ -169,8 +168,7 @@
         <div class="row">
             <?php
 
-            $query = "SELECT * FROM blog_post WHERE blog_post_status='published'";
-
+            $query = "SELECT * FROM blog_post WHERE blog_post_status='published' LIMIT 3";
             $blogPost_query = mysqli_query($connection, $query);
 
             if (!$blogPost_query) {
@@ -180,7 +178,7 @@
                 $blog_post_id = $row['blog_post_id'];
                 $blog_post_title = $row['blog_post_title'];
                 $blog_post_image = $row['blog_post_image'];
-                $blog_post_details = substr($row['blog_post_details'],0,200);
+                $blog_post_details = substr($row['blog_post_details'],0,400);
                 $blog_post_status = $row['blog_post_status'];
 
                 if($blog_post_status!=='published'){

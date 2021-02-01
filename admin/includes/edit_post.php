@@ -143,7 +143,7 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
         <select name="post_status" id="status">
             <option value='<?php echo $post_status?>'><?php echo $post_status?></option>"
             <?php
-            if(post_status == 'published'){
+            if($post_status == 'published'){
                 echo "<option value='draft'>Draft</option>";
             }else{  echo "<option value='published'>published</option>";}
             ?>
@@ -160,7 +160,7 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
 
            <div class="form-group">
          <label for="post_details">Post details</label>
-          <textarea class="form-control"   name="post_details" cols="30" row="10">
+          <textarea class="form-control"   name="post_details" cols="30" rows="10">
           <?php echo $post_details?>
         
         </textarea>

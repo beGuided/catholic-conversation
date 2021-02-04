@@ -8,21 +8,20 @@ if(isset($_GET['p_id'])){
   $select_blog_posts = mysqli_query($connection, $query);
 
     while ($row = mysqli_fetch_assoc($select_blog_posts)){
-    $blog_post_id = $row['blog_post_id'];
-    $blog_post_author = $row['blog_post_author'];
-    $blog_post_title = $row['blog_post_title'];
-    $blog_post_category_id = $row['blog_post_category_id'];
-    $blog_post_status = $row['blog_post_status'];
-    $blog_post_image = $row['blog_post_image'];
-    $blog_post_tag = $row['blog_post_tag'];
-    $blog_post_comment_count = $row['blog_post_comment_count'];
-    $blog_post_date = $row['blog_post_date'];
-    $blog_post_details = $row['blog_post_details'];
+    $blog_post_id =escape( $row['blog_post_id']);
+    $blog_post_author = escape($row['blog_post_author']);
+    $blog_post_title = escape($row['blog_post_title']);
+    $blog_post_category_id = escape($row['blog_post_category_id']);
+    $blog_post_status = escape($row['blog_post_status']);
+    $blog_post_image = escape($row['blog_post_image']);
+    $blog_post_tag = escape($row['blog_post_tag']);
+    $blog_post_comment_count = escape($row['blog_post_comment_count']);
+    $blog_post_date = escape($row['blog_post_date']);
+    $blog_post_details = escape($row['blog_post_details']);
 }
 
 
 if(isset($_POST['update_post'])){
-
 
 $blog_post_author = $_POST['blog_post_author'];
 $blog_post_title = $_POST['blog_post_title'];
@@ -43,7 +42,7 @@ move_uploaded_file($blog_post_image_temp, "../assets/images/blog/$blog_post_imag
 
 if(empty($blog_post_image)){
 
-  $query = "SELECT * FROM blog_post WHERE blog_post_id = $the_post_id";
+  $query = "SELECT * FROM blog_post WHERE blog_post_id = {$the_post_id}";
   $select_image = mysqli_query($connection, $query);
   while ($row = mysqli_fetch_assoc($select_image)) {
     $blog_post_image =$row['blog_post_image'];
@@ -88,8 +87,8 @@ $query = "SELECT * FROM categories";
 
  confirm_query($select_categories_id);
  while ($row = mysqli_fetch_assoc($select_categories_id)) {
-$cat_id = $row['cat_id'];
-$cat_title = $row['cat_title'];
+$cat_id = escape($row['cat_id']);
+$cat_title = escape($row['cat_title']);
 
 echo "<option value='{$cat_id}'>{$cat_title}</option>";
 }
@@ -105,10 +104,10 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
 
     <div class="form-group">
         <label for="Post status">Post status</label><br>
-        <select name="post_status" id="status">
+        <select name="blog_post_status" id="status">
             <option value='<?php echo $blog_post_status?>'><?php echo $blog_post_status?></option>"
             <?php
-            if(post_status == 'published'){
+            if($blog_post_status == 'published'){
                 echo "<option value='draft'>Draft</option>";
             }else{  echo "<option value='published'>published</option>";}
             ?>
@@ -130,13 +129,13 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
 
            <div class="form-group">
          <label for="blog_post_details">Post details</label>
-          <textarea class="form-control"  name="blog_post_details" cols="30" row="10">
-          <?php echo $blog_post_details?>
+          <textarea class="form-control"  id="body" name="blog_post_details" cols="50" rows="10">
+          <?php echo str_replace('\r\n', '</br>', $blog_post_details)?>
           </textarea>
          </div>
 
   <div class="form-group">
          
-          <input class="btn-warning" type="submit" name="update_post" value="update_post">
+          <input class="btn-warning" type="submit"  name="update_post" value="update_post">
          </div>
 </form>

@@ -100,38 +100,46 @@
                 <!-- label -->
             
                     <div class="row">
+
                 <?php
+                if(isset($_POST['submit'])){
+                $search = escape($_POST['search']);
+
+
 
 $query = "SELECT * FROM post WHERE post_tag LIKE '%$search%' AND post_status='published' ";
 $search_query = mysqli_query($connection, $query);
 confirm_query($search_query);
 while($row = mysqli_fetch_assoc($search_query)){
-    $post_title=$row['post_title'];
-    $post_topic=$row['post_topic'];
-    $post_details=$row['post_details'];
-    $post_slide=$row['post_slide_link'];
-    $post_image=$row['post_image'];
-    $post_video_link=$row['post_video_link'];
+    $post_id=escape($row['post_id']);
+    $post_title=escape($row['post_title']);
+    $post_topic=escape($row['post_topic']);
+    $post_details=escape($row['post_details']);
+    $post_slide=escape($row['post_slide_link']);
+    $post_image=escape($row['post_image']);
+    $post_video_link=escape($row['post_video_link']);
 
     ?>
-                        <div class="col-md-2 col-lg-2 col-sm-12 col-xl-2 m-1">
-                        <a href="#"><img src="assets/images/blog/dylan-gillis-KdeqA3aTnBY-unsplash.png"
-                                    class="img-fluid mb-4" alt=""> </a>       
-                            <div >
-                                <h3><?php echo $post_title?> </h3>
-                                <p><?php echo $post_topic?> <span class="text-danger textblack"> <?php echo $post_details?> </span></p>
-                            </div>
-                            <div >
-                            <p> <i class="text-warning fa fa-video-camera"></i>
-                            <span class="text-danger textblack"> <?php echo $post_slide?> </span></p>
-                            </div>
-                      </div>             
-
-            <?php } ?>
+    <div class="col-md-3 col-lg-3 col-sm-12 ">
+        <a href="post.php?source=post_details&p_id=<?php echo $post_id ?>">
+            <img src="assets/images/blog/<?php echo $post_image ?>" alt="img" class="img-fluid h-auto w-100"/>
+            <div>
+                <h2><?php echo $post_title ?> </h2>
+                <p><?php echo $post_topic ?> <span class="text-danger">
+                                    <?php echo $post_details ?></span></p>
+            </div>
+        </a>
+        <div>
+            <p><i class="text-warning fa fa-video-camera"></i>
+                <span class="text-danger textblack"> <a target="blank" href="<?php echo $post_slide ?>">download slide link</a> </span>
+            </p>
+        </div>
+    </div>
+            <?php } }?>
                   
 
             </div>
-
+            </div></div>
 
         <!-- latest conversaton trends end-->
 
@@ -145,9 +153,6 @@ while($row = mysqli_fetch_assoc($search_query)){
             <div class="divider_full mb-5 img-fluid"></div>
         </div>
 
-
-
-
         <!-------->
         <!-- card 2 end-->
         <!-------->
@@ -156,47 +161,45 @@ while($row = mysqli_fetch_assoc($search_query)){
         <!-- <div class="col-12 col-sm-12 col-md-4 col-lg-4 my-4"> -->
         <div class="container  ">
             <div classg="row">
-         <?php 
+         <?php
+         if(isset($_POST['submit'])){
+         $search = escape($_POST['search']);
+
   $query = "SELECT * FROM blog_post WHERE blog_post_tag LIKE '%$search%' AND  blog_post_status='published'";
 
 
 $blogPost_query = mysqli_query($connection,$query);
-
-if(!$blogPost_query){
-    die('failed query'. mysqli_error($connection));
-}    
+confirm_query($blogPost_query);
          while($row = mysqli_fetch_assoc($blogPost_query)){
-            $blog_post_title=$row['blog_post_title'];   
-            $blog_post_image=$row['blog_post_image'];   
-            $blog_post_details=$row['blog_post_details'];    
+             $blog_post_id= escape($row['blog_post_id']);
+            $blog_post_title= escape($row['blog_post_title']);
+            $blog_post_image=escape($row['blog_post_image']);
+            $blog_post_details=escape($row['blog_post_details']);
 
 ?>
 
-            <div class="card my-3">
-            <div class="row g-1">
-                <div class="col-md-5">
-                    <img src="assets/images/blog/<?php echo $blog_post_image ?>"
-                        class="img-fluid w-100" />
-
-                </div>
-                <div class="col-md-7">
-                    <div class="card-body text-center">
-                        <h5 class="card-title"><?php echo $blog_post_title ?></h5>
-                        <p class="text-center">
-                        <?php echo $blog_post_details ?>
-                        </p>
-                        <button class="btn  btn-warning px-5 text-white"><b>></b></button>
-
-
-                    </div>
-
-
-
-                </div>
-            </div>
-        </div>
+             <div class="card my-3">
+                 <div class="row g-1">
+                     <div class="col-md-5">
+                         <a href="post.php?source=blog_post_details&p_id=<?php echo $blog_post_id ?>">
+                             <img src="assets/images/blog/<?php echo $blog_post_image ?>"
+                                  class="img-fluid w-100" alt="image"/></a>
+                     </div>
+                     <div class="col-md-7">
+                         <div class="card-body text-center">
+                             <h5 class="card-title"><?php echo $blog_post_title ?></h5>
+                             <p class="text-center">
+                                 <?php echo $blog_post_details ?>
+                             </p>
+                             <a href="post.php?source=blog_post_details&p_id=<?php echo $blog_post_id ?>">
+                                 <button class="btn  btn-warning px-5 text-white"><b>></b></button>
+                             </a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
            
-       <?php  }      ?>
+       <?php  }  }    ?>
 
 
             
@@ -208,17 +211,13 @@ if(!$blogPost_query){
         <!-------->
         <!-- card 3 end-->
         <!-------->
-        </div>
-        </div>
+
 
         <!-- blog end -->
 
 
 
         <br><br>
-
-
-
 
 
 
@@ -369,16 +368,7 @@ if(!$blogPost_query){
     <!--------->
     <!-- updates start -->
     <!--------->
-    <div class="container-fluid">
-        <div class="container mt-5 mb-5 p-5 bg-light">
-            <h3 class="text-center"><b>Receive updates from Catholic Conversations</b></h3>
-            <div class="d-flex formgroup text-center mt-5">
-                <input type="email" class="form-control w-50 py-1 m-0" name="email" id="email"
-                    placeholder="Enter e-mail here">
-                <button type="submit" class=" btn-warning btn"><b>SUBSCRIBE</b></button>
-            </div>
-        </div>
-    </div>
+<?php include "includes/subscribe.php"?>
     <!--------->
     <!-- updates end -->
     <!--------->

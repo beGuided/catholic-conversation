@@ -49,7 +49,7 @@
         echo"<td>$comment_email</td>";
         echo"<td>$comment_status</td>";
 
-        $query ="SELECT * FROM blog_post WHERE blog_post_id=$comment_post_id";
+        $query ="SELECT * FROM blog_post WHERE blog_post_id={$comment_post_id}";
         $select_post_id_query = mysqli_query($connection, $query);
         while ($row = mysqli_fetch_assoc($select_post_id_query)) {
             $post_id=$row['blog_post_id'];

@@ -241,16 +241,7 @@
     <!--------->
     <!-- updates start -->
     <!--------->
-    <div class="container-fluid">
-        <div class="container mt-5 mb-5 p-5 bg-light">
-            <h3 class="text-center"><b>Receive updates from Catholic Conversations</b></h3>
-            <div class="d-flex formgroup text-center mt-5">
-                <input type="email" class="form-control w-50 py-1 m-0" name="email" id="email"
-                    placeholder="Enter e-mail here">
-                <button type="submit" class=" btn-warning btn"><b>SUBSCRIBE</b></button>
-            </div>
-        </div>
-    </div>
+<?php include "includes/subscribe.php"?>
     <!--------->
     <!-- updates end -->
     <!--------->

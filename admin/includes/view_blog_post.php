@@ -20,8 +20,8 @@ if(isset($_POST['checkBoxesArray'])){
             case 'delete':
                 $query="DELETE FROM blog_post WHERE blog_post_id = {$postValueId}";
                 $delete_query= mysqli_query($connection,$query );
-                header("Location:posts.php");
-                confirm_query($update_to_publish_status);
+                confirm_query($delete_query);
+                header("Location:posts.php?source=view_blog_post");
         }
     }
 }
@@ -84,7 +84,7 @@ if(isset($_POST['checkBoxesArray'])){
                          echo"<td>$blog_post_author</td>";
                          echo"<td>$blog_post_title</td>";
 
-                         $query = "SELECT * FROM categories WHERE cat_id=$blog_post_category_id ";
+                         $query = "SELECT * FROM categories WHERE cat_id={$blog_post_category_id} ";
                          $select_categories_id = mysqli_query($connection, $query);
                         
                          while ($row = mysqli_fetch_assoc($select_categories_id)) {

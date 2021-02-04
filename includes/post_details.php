@@ -1,279 +1,215 @@
+<!-- latest conversaton trends start-->
+<div class="container-fluid 8 ">
+    <div class="row">
+
+    </div>
+
+    <!-- label -->
+    <div class="container  col-md-">
+
+        <div class="row text-center m-2">
+            <h1><b class="textxbold">videos post </b></h1>
+        </div>
+
+        <!-- label -->
+
+        <div class="row">
 
 
+            <?php
+            if (isset($_GET['p_id'])) {
+                $post_id = escape($_GET['p_id']);
 
+            }
 
-        <!-- latest conversaton trends start-->
-        <div class="container-fluid 8 ">
-            <div class="row">
+            $query = "SELECT * FROM post WHERE post_id = {$post_id}";
 
-            </div>
+            $Video_post_query = mysqli_query($connection, $query);
+            if (!$Video_post_query) {
+                die('failed query' . mysqli_error($connection));
+            }
 
-            <!-- label -->
-            <div class="container  col-md-">
+            while ($row = mysqli_fetch_assoc($Video_post_query)) {
+                $post_id = escape($row['post_id']);
+                $post_title = escape($row['post_title']);
+                $post_category_id = escape($row['post_category_id']);
+                $post_topic = escape($row['post_topic']);
+                $post_details =escape( $row['post_details']);
+                $post_slide = escape($row['post_slide_link']);
+                $post_image = escape($row['post_image']);
+                $post_video_link = escape($row['post_video_link']);
 
-                    <div class="row text-center m-2">
-                        <h1><b class="textxbold">videos post </b></h1>
+                ?>
+                <div class="col-md-9 col-lg-9 col-sm-12 col-xl-9  bg-dark">
+                    <h3><?php echo $post_title ?> </h3>
+                    <div class="w-100 img-responsive">
+                        <iframe src="https://www.youtube.com/embed/<?php echo $post_video_link ?>"></iframe>
                     </div>
-                
-                <!-- label -->
-            
-                    <div class="row">
+                    <!--        <a href="">< <v src="assets/images/blog/--><?php //echo $post_video_link
+                    ?><!--" alt="img" class="img-fluid w-100" /> </a>-->
+                    <div>
+                        <h3><?php echo $post_topic ?> <span
+                                    class="text-danger textblack"> <?php echo $post_details ?> </span></h3>
+                    </div>
+                </div>
+                <div class="col-md-9 col-12 bg-danger">
+                    <p><i class="text-warning fa fa-video-camera"></i>
+                        <span class="text-danger textblack"> <a target="blank" href="<?php echo $post_slide ?>">download slide link</a> </span>
+                    </p>
+                </div>
+            <?php } ?>
 
-                                        
-                <?php
-                if(isset($_GET['p_id'])){
-                    $post_id=$_GET['p_id'];
+        </div>
 
-                }
+    </div>
+</div>
 
-$query = "SELECT * FROM post WHERE post_id = {$post_id}";
+<!-- latest conversaton trends end-->
 
-$Video_post_query = mysqli_query($connection,$query);
-if(!$Video_post_query){
-    die('failed query'. mysqli_error($connection));
-}
 
-while($row = mysqli_fetch_assoc($Video_post_query)){
-    $post_id=$row['post_id'];
-    $post_title=$row['post_title'];
-    $post_topic=$row['post_topic'];
-    $post_details=$row['post_details'];
-    $post_slide=$row['post_slide_link'];
-    $post_image=$row['post_image'];
-    $post_video_link=$row['post_video_link'];
+<!--blog comment-->
+<?php
+if (isset($_POST['create_comment'])) {
+    $the_post_id = $_GET['p_id'];
+    $comment_author = $_POST['comment_author'];
+    $comment_email = $_POST['comment_email'];
+    $comment_content = $_POST['comment_content'];
+
+    if (!empty($comment_author) && !empty($comment_email) && !empty($comment_content)) {
+        $query = "INSERT INTO Comments(comment_post_id, comment_author, comment_email, comment_content, comment_status, comment_date) ";
+        $query .= "VALUES ($the_post_id, '{$comment_author}', '{$comment_email}', '{$comment_content}', 'unapproved', now())";
+        $create_comment_query = mysqli_query($connection, $query);
+
+        if (!$create_comment_query) {
+            die('failed query' . mysqli_error($connection));
+        };
+
+        $query = "UPDATE blog_post SET blog_post_comment_count = blog_post_comment_count + 1 ";
+        $query .= " WHERE blog_post_id = $the_post_id";
+        $update_comment_count = mysqli_query($connection, $query);
+
+    } else {
+        echo "<script>alert('fields cannot be empty')</script>";
+    }
+};
 
 ?>
-        <div class="col-md-2 col-lg-2 col-sm-12 col-xl-2 m-1">
-            <iframe
-                    src="https://www.youtube.com/embed/<?php echo $post_video_link?>">
-            </iframe>
-<!--        <a href="">< <v src="assets/images/blog/--><?php //echo $post_video_link?><!--" alt="img" class="img-fluid w-100" /> </a>-->
-            <div >
-                <h3><?php echo $post_title?> </h3>
-                <p><?php echo $post_topic?> <span class="text-danger textblack"> <?php echo $post_details?> </span></p>
-            </div>
-            <div >
-            <p> <i class="text-warning fa fa-video-camera"></i>
-            <span class="text-danger textblack"> <a target="blank" href="<?php echo $post_slide?>">download slide link</a> </span></p>
-            </div>
-        </div>             
 
-            <?php } ?>
-                  
-            
-            </div>
+<div class=" well container mt-2 ">
+    <h4>Leave a comment:</h4>
+    <div class="row">
+        <div class="col-md-8 col-lg-8 col-xl-8 col-sm-12">
+            <form action="" method="post" role="form">
 
-            </div>
-        </div>
-
-        <!-- latest conversaton trends end-->
-
-
-
-        <!-- blog start -->
-        <div class="container-fluid mt-5">
-            <div class=" text-center ">
-                <h1><b class="textxbold">BLOG</b></h1>
-            </div>
-            <div class="divider_full mb-5 img-fluid"></div>
-        </div>
-
-
-        <!-------->
-        <!-- card 2 end-->
-        <!-------->
-
-        <!-- card 3-->
-        <!-- <div class="col-12 col-sm-12 col-md-4 col-lg-4 my-4"> -->
-
-        <!-------->
-        <!-- card 3 end-->
-        <!-------->
-
-
-        <!-- blog end -->
-
-
-
-        <br><br>
-
-
-
-
-
-
-        <!---------------->
-        <!-- events begin -->
-        <!---------------->
-
-
-
-
-        <div class="container-fluid mb-5">
-            <div class="row text-center ">
-                <h1><b class="textxbold">Activities</b></h1>
-                <div class="divider_full"></div>
-            </div>
-        </div>
-
-        <!---------------->
-        <!-- doctrinal begin -->
-        <!---------------->
-
-
-        <div class="container col-xl-11 col-sm-12 col-md-11 my-4">
-            <div class="row ">
-                <div class="col-12  ">
-                    <div class="card " style="width:auto;">
-                        <img src=" assets/images/blog/dylan-gillis-KdeqA3aTnBY-unsplash-1@3x.png "
-                            class="card-img-top bg-image" alt="image">
-                        <div class="my-4"></div>
-                        <div class="card-body text-center px-4">
-                            <h3 class="card-title">Doctrinal Classes with Young Men</h3>
-                            <div class="divider_full col-sm-12 img-fluid"></div>
-
-                            <p class="card-text mx-5 text-left ">
-                                Very much like the Catholic conversations, these are weekly classes held in the
-                                various centres of Opus Dei across Nigeria. Young men meet to learn about the Catholic
-                                faith
-                                and doctrine (Sacred Scripture and Sacred Tradition). COVID-19 has changed much and at
-                                the
-                                moment, these doctrinal classes hold online every Monday at 5 pm. Register here below to
-                                attend.</p>
-
-                            <a href="#" class="btn btn-warning  text-light float-right my-3"
-                                style="width: 300px;">REGISTER ></a>
-                        </div>
-
-                    </div>
-
+                <div class="form-group">
+                    <label for="Author">comment Author </label>
+                    <input class="form-control" type="text" name="comment_author">
+                </div>
+                <div class="form-group">
+                    <label for="Email">Email </label>
+                    <input class="form-control" type="email" name="comment_email">
                 </div>
 
-            </div>
-
-        </div>
-
-
-
-
-        <!---------------->
-        <!-- doctrinal end -->
-        <!---------------->
-
-
-        <!---------------->
-        <!-- Meditations begin -->
-        <!---------------->
-
-        <div class="container col-xl-11 col-sm-12 col-md-11 my-4">
-            <div class="row ">
-                <div class="col-12  ">
-                    <div class="card " style="width:auto;">
-                        <img src=" assets/images/blog/dylan-gillis-KdeqA3aTnBY-unsplash-1@3x.png "
-                            class="card-img-top bg-image" alt="image">
-                        <div class="my-4"></div>
-                        <div class="card-body text-center px-4">
-                            <h3 class="card-title">Doctrinal Classes with Young Men</h3>
-                            <div class="divider_full  col-sm-12 img-fluid"></div>
-
-                            <p class="card-text mx-5 text-left ">
-                                Very much like the Catholic conversations, these are weekly classes held in the
-                                various centres of Opus Dei across Nigeria. Young men meet to learn about the Catholic
-                                faith
-                                and doctrine (Sacred Scripture and Sacred Tradition). COVID-19 has changed much and at
-                                the
-                                moment, these doctrinal classes hold online every Monday at 5 pm. Register here below to
-                                attend.</p>
-
-                            <a href="#" class="btn btn-warning  text-light float-right my-3"
-                                style="width: 300px;">REGISTER ></a>
-                        </div>
-
-                    </div>
-
+                <div class="form-group">
+                    <label for="content">your comment </label>
+                    <textarea class="form-control" name="comment_content" rows="3"></textarea>
                 </div>
 
-            </div>
-
+                <div class="form-group">
+                    <button type="submit" name="create_comment" class="btn btn-warning">submit</button>
+                </div>
+            </form>
         </div>
+    </div>
 
+</div>
+<?php
 
+$the_post_id = $_GET['p_id'];
+$query = "SELECT * FROM Comments WHERE comment_post_id = {$the_post_id} ";
+$query .= "AND comment_status ='Approved' ";
+$query .= "ORDER BY comment_id DESC";
 
+$select_comment_query = mysqli_query($connection, $query);
+if (!$select_comment_query) {
+    die('failed query' . mysqli_error($connection));
+}
+while ($row = mysqli_fetch_assoc($select_comment_query)) {
+    $comment_date = $row['comment_date'];
+    $comment_content = $row['comment_content'];
+    $comment_author = $row['comment_author'];
 
-
-
-    </section>
-    <!--------->
-    <!-- about Opus Dei start -->
-    <!--------->
-
-    <div class="container-fluid p-5 bg-slant">
-        <div class="container mb-2 mt-5 p-5">
-            <div class="row text-center ">
-                <h1><b class="textxbold">About Opus Dei</b></h1>
-                <div class="divider_full"></div>
-            </div>
-        </div>
-        <div class="container mx-6 justify-content-center p-1">
-            <p class="m-0 p-0">Opus Dei, in full, the Prelature of the Holy Cross and Opus Dei, is a personal
-                prelature
-                of the Catholic Church, founded in 1928 by Spanish priest, St. Josemaria Esciva. It has over 90,000
-                members, a large majority of whom are lay men and women, the others being priests. Opus Dei members
-                strive to live out their Christian faith fully in their life and work — they strive to be saints
-                through
-                their ordinary life.
-                Other aspects of the spirituality of Opus Dei are divine filiation (awareness of being a child of
-                God
-                and acting accordingly), ordinary life (finding God in everyday things), charity and apostolate
-                (like
-                the early Christians, giving witness to their faith and helping others to know Christ), love for
-                freedom
-                (in anything that is not a matter of faith each person makes their own decisions and takes
-                responsibility for them), prayer and sacrifice (trying to have a constant dialogue with God and
-                being
-                ready to put their interests and those of others before their own) and unity of life (trying to live
-                their faith in every aspect of their life) (FAQs, opusdei.org).
-                Read more about the activities, the Prelate and the message of Opus Dei through the link below.
-            </p>
-            <a href="https://opusdei.org" target="blank" class="text-warning ">
-                <h4 class="m-0 p-0">Learn more</h4>
+    ?>
+    <div class=" well container">
+        <div><h2>View Comment</h2></div>
+        <div class="media">
+            <a class="pull-left" href="">
+                <img class="media-object" src="" alt="">
             </a>
-        </div>
-    </div>
 
-    <!--------->
-    <!-- about Opus Dei end -->
-    <!--------->
+            <div class="media-body">
+                <h4 class="media-heading">
 
-    <!--------->
-    <!-- updates start -->
-    <!--------->
-    <div class="container-fluid">
-        <div class="container mt-5 mb-5 p-5 bg-light">
-            <h3 class="text-center"><b>Receive updates from Catholic Conversations</b></h3>
-            <div class="d-flex formgroup text-center mt-5">
-                <input type="email" class="form-control w-50 py-1 m-0" name="email" id="email"
-                    placeholder="Enter e-mail here">
-                <button type="submit" class=" btn-warning btn"><b>SUBSCRIBE</b></button>
+                    <?php echo $comment_author; ?>
+                    <small>
+                        <?php echo $comment_date; ?>
+                    </small>
+                </h4>
+                <?php echo $comment_content; ?>
             </div>
         </div>
     </div>
-    <!--------->
-    <!-- updates end -->
-    <!--------->
 
 
-    <section>
+<?php } ?>
 
-    </section>
+<div class="divider_full mt-5 img-fluid"></div>
 
 
-    <!--------->
-    <!-- footer start -->
-    <!--------->
+<div class="text-center"><h1>Related Post</h1></div>
 
-<?php include "includes/footer.php"?>
+<div class="container">
+    <div class="row">
+        <?php
+        $query = "SELECT * FROM post WHERE post_category_id= {$post_category_id} LIMIT 6";
+        $related_post = mysqli_query($connection, $query);
 
-      <!--------->
-    <!-- footer end -->
-    <!--------->
+        if (!$related_post) {
+            die('failed query' . mysqli_error($connection));
+        }
+        while ($row = mysqli_fetch_assoc($related_post)) {
+            $post_id = $row['post_id'];
+            $post_title = escape($row['post_title']);
+            $post_topic = $row['post_topic'];
+            $post_details = $row['post_details'];
+            $post_image = $row['post_image'];
+
+
+            ?>
+
+            <div class="col-md-3 col-lg-3 col-sm-12 ">
+                <a href="post.php?source=post_details&p_id=<?php echo $post_id ?>">
+                    <img src="assets/images/blog/<?php echo $post_image ?>" alt="img" class="img-fluid h-auto w-100"/>
+                    <div>
+                        <h2><?php echo $post_title ?> </h2>
+                        <p><?php echo $post_topic ?> <span class="text-danger">
+                                    <?php echo $post_details ?></span></p>
+                    </div>
+                </a>
+                <div>
+                    <!--                    <p><i class="text-warning fa fa-video-camera"></i>-->
+                    <!--                        <span class="text-danger textblack"> <a target="blank" href="-->
+                    <?php //echo $post_slide
+                    ?><!--">download slide link</a> </span>-->
+                    <!--                    </p>-->
+                </div>
+            </div>
+
+        <?php } ?>
+    </div>
+
+</div>
+
+
+
+

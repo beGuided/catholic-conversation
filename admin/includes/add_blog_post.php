@@ -2,10 +2,10 @@
 <?php 
 
 if(isset($_POST['create_post'])){
-$blog_post_author = $_POST['blog_post_author'];
-$blog_post_title = $_POST['blog_post_title'];
-$blog_post_category_id = $_POST['blog_post_category_id'];
-$blog_post_status = $_POST['blog_post_status'];
+$blog_post_author = escape($_POST['blog_post_author']);
+$blog_post_title = escape($_POST['blog_post_title']);
+$blog_post_category_id = escape($_POST['blog_post_category_id']);
+$blog_post_status = escape($_POST['blog_post_status']);
 
 $blog_post_image = $_FILES['image']['name'];
 $blog_post_image_temp = $_FILES['image']['tmp_name'];
@@ -30,7 +30,7 @@ confirm_query($Create_post_query);
 ?>
 <form action="" method="post" enctype="multipart/form-data">
        <div class="form-group">
-         <label for="blog_post_title">Post Title</label>
+         <label for="blog_post_title">Blog Post Title</label>
           <input class="form-control" type="text" name="blog_post_title">
          </div>
 
@@ -44,8 +44,8 @@ $query = "SELECT * FROM categories";
 
  confirm_query($select_categories_id);
  while ($row = mysqli_fetch_assoc($select_categories_id)) {
-$cat_id = $row['cat_id'];
-$cat_title = $row['cat_title'];
+$cat_id = escape($row['cat_id']);
+$cat_title = escape($row['cat_title']);
 
 echo "<option value='{$cat_id}'>{$cat_title}</option>";
 }
@@ -55,13 +55,13 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
 </div>
 
          <div class="form-group">
-         <label for="blog_post_author">Post Author</label>
+         <label for="blog_post_author">Blog Post Author</label>
           <input class="form-control" type="text" name="blog_post_author">
          </div>
 
     <div class="form-group">
-        <label for="blog_post_status">Post Status</label>
-        <select name="post_status">
+        <label for="blog_post_status">Blog Post Status</label>
+        <select name="blog_post_status">
             <option value="draft"> select option</option>
             <option value="published">Publish</option>
             <option value="draft">Draft</option>
@@ -82,7 +82,7 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
 
            <div class="form-group">
          <label for="blog_post_details">Post details</label>
-          <textarea class="form-control"  name="blog_post_details" id="body" cols="30" rows="10"></textarea>
+          <textarea class="form-control"  name="blog_post_details" id="body" cols="70" rows="10"></textarea>
          </div>
 
   <div class="form-group">

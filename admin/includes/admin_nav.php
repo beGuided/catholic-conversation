@@ -62,6 +62,18 @@
                 </ul>
             </li>
             <li>
+            <a href="javascript:" data-toggle="collapse" data-target="#podcast"><i
+                        class="fa fa-fw fa-arrows-v"></i> PodCast <i class="fa fa-fw fa-caret-down"></i></a>
+            <ul id="podcast" class="collapse">
+                <li>
+                    <a href="./posts.php?source=view_podcast">All Podcast</a>
+                </li>
+                <li>
+                    <a href="./posts.php?source=add_podcast">Add Podcast</a>
+                </li>
+            </ul>
+            </li>
+            <li>
                 <a href="categories.php"><i class="fa fa-fw fa-edit"></i> Categories</a>
             </li>
             <li>

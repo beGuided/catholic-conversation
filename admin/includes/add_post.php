@@ -108,7 +108,7 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
 
            <div class="form-group">
          <label for="post_details">Post details</label>
-          <textarea class="form-control"  name="post_details" id="body" cols="50" rows="10"></textarea>
+          <textarea class="form-control"  name="post_details" id="" cols="50" rows="10"></textarea>
          </div>
 
   <div class="form-group">

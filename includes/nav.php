@@ -27,6 +27,13 @@
                         <li class="nav-item">
                             <a class="nav-link active text-warning" aria-current="page" href="admin/">Admin</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active text-warning" aria-current="page" href="videos.php">video</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-warning" aria-current="page" href="about.php">about</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link active text-warning" aria-current="page" href="login.php">login</a>
                         </li>
@@ -35,29 +42,28 @@
                     <?php 
 
                     if(isset($_POST['submit'])){
-                        $search = $_POST['search'];
-
-                        $query = "(SELECT post_tag, 'post' as type FROM post  WHERE post_tag LIKE '%$search %' )
+                        $search = escape($_POST['search']);
+//
+                        $query = "(SELECT post_tag, 'post' as type FROM post  WHERE post_tag LIKE '%".$search ."%' )
                         UNION
                         (SELECT blog_post_tag, 'blog' as type FROM blog_post WHERE blog_post_tag LIKE '%$search%')";
 
                         $search_query = mysqli_query($connection, $query);
-                        if(!$search_query){
-                            die('failed query'.mysqli_error($connection));
-                        }
+                        confirm_query($search_query);
                         $count = mysqli_num_rows($search_query);
                         if($count == 0){
-                            echo " <h1> no result</h1>"; 
+                            echo " <h1> no result</h1>";
                         }else {
                             echo " <h1> some result</h1>";
                         }
 
-                    }  
+                    }
                     
                     ?>
-                    <form class="d-flex" action="search.php" method="post">
+                    <form class="d-flex" action="search.php?search=" method="post">
                         <input class="form-control me-2" type="search" name= "search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-warning" name= "submit" type="submit">Search</button>
+
                     </form>
                 </div>
             </div>

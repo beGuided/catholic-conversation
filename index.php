@@ -66,7 +66,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid p-2 mt-5 mb-5">
+    <div class="container-fluid p-2 my-5 mx-auto >
         <div class="container col mx-1 justify-content-center px-5">
             <h1> Catholic Conversations </h1>
             <p>is here as a space for young men, seeking deeper understanding of the
@@ -100,22 +100,20 @@
             <div class="row">
                 <?php
 
-                $query = "SELECT * FROM post WHERE post_status='published' LIMIT 4";
+                $query = "SELECT * FROM post WHERE post_status='published' ";
+                $query .= "ORDER BY post_id DESC LIMIT 4 ";
 
                 $Video_post_query = mysqli_query($connection, $query);
-                if (!$Video_post_query) {
-                    die('failed query' . mysqli_error($connection));
-                }
-
+               confirm_query($Video_post_query);
                 while ($row = mysqli_fetch_assoc($Video_post_query)) {
-                    $post_id = $row['post_id'];
-                    $post_title = $row['post_title'];
-                    $post_topic = $row['post_topic'];
-                    $post_details = $row['post_details'];
-                    $post_slide = $row['post_slide_link'];
-                    $post_image = $row['post_image'];
-                    $post_video_link = $row['post_video_link'];
-                    $post_status = $row['post_status'];
+                    $post_id = escape($row['post_id']);
+                    $post_title = escape($row['post_title']);
+                    $post_topic = escape($row['post_topic']);
+                    $post_details = escape($row['post_details']);
+                    $post_slide = escape($row['post_slide_link']);
+                    $post_image = escape($row['post_image']);
+                    $post_video_link =escape($row['post_video_link']);
+                    $post_status = escape($row['post_status']);
 
 
                 if($post_status!=='published'){
@@ -168,18 +166,15 @@
         <div class="row">
             <?php
 
-            $query = "SELECT * FROM blog_post WHERE blog_post_status='published' LIMIT 3";
+            $query = "SELECT * FROM blog_post WHERE blog_post_status='published' ORDER BY blog_post_id DESC  LIMIT 3";
             $blogPost_query = mysqli_query($connection, $query);
-
-            if (!$blogPost_query) {
-                die('failed query' . mysqli_error($connection));
-            }
+            confirm_query($blogPost_query);
             while ($row = mysqli_fetch_assoc($blogPost_query)) {
-                $blog_post_id = $row['blog_post_id'];
-                $blog_post_title = $row['blog_post_title'];
-                $blog_post_image = $row['blog_post_image'];
-                $blog_post_details = substr($row['blog_post_details'],0,400);
-                $blog_post_status = $row['blog_post_status'];
+                $blog_post_id = escape($row['blog_post_id']);
+                $blog_post_title = escape($row['blog_post_title']);
+                $blog_post_image = escape($row['blog_post_image']);
+                $blog_post_details = escape(substr($row['blog_post_details'],0,400));
+                $blog_post_status = escape($row['blog_post_status']);
 
                 if($blog_post_status!=='published'){
                     echo"<h1>no post</h1>";

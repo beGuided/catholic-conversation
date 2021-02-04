@@ -13,17 +13,14 @@ if (isset($_POST['login'])) {
 
     $query = "SELECT * FROM users WHERE User_name ='{$username}' ";
     $select_user_query = mysqli_query($connection, $query);
-    if (!$select_user_query) {
-        die('failed query' . mysqli_error($connection));
-    }
-
+    confirm_query($select_user_query);
     while ($row = mysqli_fetch_assoc($select_user_query)) {
-        $db_user_id = $row['user_id'];
-        $db_username = $row['User_name'];
-        $db_user_password = $row['user_password'];
-        $db_user_firstName = $row['user_firstName'];
-        $db_user_lastName = $row['user_lastName'];
-        $db_user_role = $row['user_role'];
+        $db_user_id = escape($row['user_id']);
+        $db_username = escape($row['User_name']);
+        $db_user_password = escape($row['user_password']);
+        $db_user_firstName = escape($row['user_firstName']);
+        $db_user_lastName = escape($row['user_lastName']);
+        $db_user_role = escape($row['user_role']);
 //        echo $db_user_id;
         //$password = crypt($password, $db_user_password);
     }

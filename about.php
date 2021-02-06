@@ -24,7 +24,7 @@
     <div class="container-fluid p-5">
         <div class="container mb-2 mt-5 p-5">
             <div class="row text-center ">
-                <h1><b class="textxbold">About<span class="text-warning"> Opus Dei</span></b></h1>
+                <h1><b class="textxbold">About<span class="text-warning"> Catholic Conversation</span></b></h1>
                 <div class="divider_full"></div>
             </div>
         </div>

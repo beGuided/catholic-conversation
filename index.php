@@ -1,82 +1,43 @@
 <?php include "includes/header.php" ?>
 
-
 <!-- nav section start -->
 <?php include "includes/nav.php" ?>
 </nav> <!-- nav section end -->
 
-<!-- slider start -->
 <?php include "includes/db.php" ?>
-<div class="container-fluid ">
+<!-- slider start -->
 
-    <div class="row">
-        <div class="col-xl-12 mx-p px-0 ">
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
 
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="assets/images/slider/Group 26.png"
-                             class="img.fluid w-100 " alt="">
+        <?php include "includes/slider.php" ?>
 
-                        <img src="" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <div class="row ">
-                                <div class="mt-3">
-                                    <h3>DOCTRINAL CLASSES WITH YOUNG MEN</h3>
-                                </div>
-                                <div class="divider">
+ 
 
-                                </div>
-                                <div>
-                                    <p class=" mx-5">Lorem ipsum dolor sit amet, consetetur
-                                        sadipscing elitr, sed diam nonumy eirmod
-                                        tempor invidunt ut labore et dolore magna
-                                        aliquyam erat, sed diam voluptua. At vero</p>
-                                    <button class="btn btn-warning text-light">REGISTER ></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/images/slider/Group 26.png"
-                             class="img.fluid w-100 " alt="">
-
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                    </div>
-
-                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button"
-                       data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button"
-                       data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid p-2 my-5 mx-auto >
-        <div class="container col mx-1 justify-content-center px-5">
+<div class="container  my-5  ">
+        <div class="row ">
             <h1> Catholic Conversations </h1>
             <p>is here as a space for young men, seeking deeper understanding of the
                 Catholic faith, to meet, discuss, seek clarification about and learn Catholic doctrine. </p>
-
-            <button class="btn btn-warning text-light px-5"><b>REGISTER ></b></button>
-
-        </div>
-    </div>
 </div>
+<a href="#subscribe">
+<button class="btn btn-warning text-light "><b>SUBSCRIBE ></b></button>
+</a>
+        </div>
+        <div class="container-fluid"> 
+            <div class="row ">
+                <div class="col-lg-12 col-md-12 col-sm-8 text-center">
+
+                    <a href="#">
+                    <i class="fa fa-whatsapp text-dark bg-warning btn "></i>
+                    </a>
+                    <a href="#">
+                    <i class="fa fa-play text-dark bg-warning btn "></i>
+                    </a>
+                    <a href="#">
+                <i class="fa fa-video-camera text-dark bg-warning btn "></i>
+                </a>
+                </div>
+            </div>
+            </div>
 
 <!--
     slider end
@@ -87,17 +48,14 @@
 <section>
 
     <!-- latest conversaton trends start-->
-    <div class="container-fluid bg-slant">
-
+    <div class="container-fluid bg-slant ">
+    <!--  <img src="assets/images/blog/slant-bg.png" > -->
         <!-- label -->
         <div class="container mt-5 py-5">
-
-            <div class="row text-center m-2">
-                <h1><b class="textxbold">LATEST CONVERSATION THREADS</b></h1>
-            </div>
+            <div class="row">
+                <h1 class="text-center m-2"><b class="textxbold">LATEST CONVERSATION THREADS</b></h1>
             <!-- label -->
 
-            <div class="row">
                 <?php
 
                 $query = "SELECT * FROM post WHERE post_status='published' ";
@@ -120,6 +78,7 @@
                     echo"<h1>no post</h1>";
                 }else{
                     ?>
+
                     <div class="col-md-3 col-lg-3 col-sm-12 ">
                         <a href="post.php?source=post_details&p_id=<?php echo $post_id ?>">
                             <img src="assets/images/blog/<?php echo $post_image ?>" alt="img" class="img-fluid h-auto w-100"/>
@@ -257,8 +216,8 @@
                             moment, these doctrinal classes hold online every Monday at 5 pm. Register here below to
                             attend.</p>
 
-                        <a href="#" class="btn btn-warning  text-light float-right my-3"
-                           style="max-width: 300px;">REGISTER ></a>
+                        <a href="#subscribe" class="btn btn-warning  text-light float-right my-3"
+                           style="max-width: 300px;">SUBSCRIBE ></a>
                     </div>
 
                 </div>
@@ -300,8 +259,8 @@
                             moment, these doctrinal classes hold online every Monday at 5 pm. Register here below to
                             attend.</p>
 
-                        <a href="#" class="btn btn-warning  text-light float-right my-3"
-                           style="max-width:300px;">REGISTER ></a>
+                        <a href="#subscribe" class="btn btn-warning  text-light float-right my-3"
+                           style="max-width:300px;">SUBSCRIBE ></a>
                     </div>
 
                 </div>
@@ -318,7 +277,7 @@
 <!-- about Opus Dei start -->
 <!--------->
 
-<div class="container-fluid p-5 bg-slant">
+<div class="container-fluid p-5 bg-slant ">
     <div class="container mb-2 mt-5 p-5">
         <div class="row text-center ">
             <h1><b class="textxbold">About Opus Dei</b></h1>
@@ -347,7 +306,7 @@
             Read more about the activities, the Prelate and the message of Opus Dei through the link below.
         </p>
         <a href="https://opusdei.org" target="blank" class="text-warning ">
-            <h4 class="m-0 p-0">Learn more</h4>
+            <h4 class="m-0 p-0 text-warning">Learn more</h4>
         </a>
     </div>
 </div>

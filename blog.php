@@ -48,7 +48,7 @@
                 $page_1 =($page * 8)- 8;
             }
 
-            $post_query_count= "SELECT * FROM blog_post WHERE blog_post_status='published'";
+            $post_query_count= "SELECT * FROM blog_post WHERE blog_post_status='published' ORDER BY blog_post_id DESC";
             $find_count=mysqli_query($connection, $post_query_count);
             $count = mysqli_num_rows($find_count);
             $count=ceil($count/9);
@@ -87,34 +87,31 @@
 <!--pagination start-->
 <!--            -->
 
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center mt-5">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
+            <div class="container mt-5 ">
+                <ul class="link-n">
                     <?php
                     for($i=1; $i<=$count; $i++){
-                        echo "  <li class='page-item'><a class='page-link' href='blog.php?page={$i}'>{$i}</a></li>";
+                        if($i==$page){
+                            echo " <li><a class='text-warning link-n p-1' href='blog.php?page={$i}'>{$i}</a></li>";
+                            //echo "  <li class='page-item'><a class='active_link' href='blog.php?page={$i}'><button class='btn-warning'>{$i}</button> </a></li>";
+                        }else{
+                            echo"<li><a class='link-n text-dark p-1' href='blog.php?page={$i}'>{$i}</a></li>";
+                        }
+                           // echo "  <li class='page-item'><a class='page-link' href='blog.php?page={$i}'>{$i}</a></li>";}
                     }
                     ?>
 
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
 
-            <ul class="pager">
-                <?php
-                for($i=1; $i<=$count; $i++){
-                    echo "  <li><a href='blog.php?page={$i}'>{$i}</a></li>";
-                }
-                ?>
-            </ul>
+                </ul>
+            </div>
+
+<!--            <ul class="pager">-->
+<!--                --><?php
+//                for($i=1; $i<=$count; $i++){
+//                    echo "  <li><a href='blog.php?page={$i}'>{$i}</a></li>";
+//                }
+//                ?>
+<!--            </ul>-->
 
 
             <!---->

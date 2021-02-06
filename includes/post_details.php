@@ -1,18 +1,10 @@
 <!-- latest conversaton trends start-->
-<div class="container-fluid 8 ">
-    <div class="row">
 
-    </div>
 
-    <!-- label -->
-    <div class="container  col-md-">
 
-        <div class="row text-center m-2">
-            <h1><b class="textxbold">videos post </b></h1>
-        </div>
-
+<br><br>
         <!-- label -->
-
+<div class="container my-5">
         <div class="row">
 
 
@@ -40,20 +32,19 @@
                 $post_video_link = escape($row['post_video_link']);
 
                 ?>
-                <div class="col-md-9 col-lg-9 col-sm-12 col-xl-9  bg-dark">
+                <div class="col-md-9 col-lg-9 col-sm-12 col-xl-9 ">
                     <h3><?php echo $post_title ?> </h3>
-                    <div class="w-100 img-responsive">
-                        <iframe src="https://www.youtube.com/embed/<?php echo $post_video_link ?>"></iframe>
+                    <div  >
+                        <iframe src="https://drive.google.com/file/d/<?php echo $post_video_link ?>/ preview"  class="img-responsive  w-100"></iframe>
+
+                        <!-- iframe src="https://www.youtube.com/embed/<?php echo $post_video_link ?>"  height="300px" class="img-responsive  w-100" ></iframe> -->
                     </div>
-                    <!--        <a href="">< <v src="assets/images/blog/--><?php //echo $post_video_link
-                    ?><!--" alt="img" class="img-fluid w-100" /> </a>-->
-                    <div>
-                        <h3><?php echo $post_topic ?> <span
-                                    class="text-danger textblack"> <?php echo $post_details ?> </span></h3>
-                    </div>
+                    <h3><?php echo $post_topic ?> <span class="text-danger textblack"> <?php echo $post_details ?> </span></h3>
+
                 </div>
-                <div class="col-md-9 col-12 bg-danger">
-                    <p><i class="text-warning fa fa-video-camera"></i>
+                <div class="col-md-9 col-12 " style="border-bottom: dotted #ffc107">
+                    <p>
+                     <i class="text-warning fa fa-video-camera"></i>
                         <span class="text-danger textblack"> <a target="blank" href="<?php echo $post_slide ?>">download slide link</a> </span>
                     </p>
                 </div>
@@ -62,7 +53,7 @@
         </div>
 
     </div>
-</div>
+
 
 <!-- latest conversaton trends end-->
 
@@ -80,10 +71,7 @@ if (isset($_POST['create_comment'])) {
         $query .= "VALUES ($the_post_id, '{$comment_author}', '{$comment_email}', '{$comment_content}', 'unapproved', now())";
         $create_comment_query = mysqli_query($connection, $query);
 
-        if (!$create_comment_query) {
-            die('failed query' . mysqli_error($connection));
-        };
-
+       confirm_query($create_comment_query);
         $query = "UPDATE blog_post SET blog_post_comment_count = blog_post_comment_count + 1 ";
         $query .= " WHERE blog_post_id = $the_post_id";
         $update_comment_count = mysqli_query($connection, $query);
@@ -97,7 +85,7 @@ if (isset($_POST['create_comment'])) {
 
 <div class=" well container mt-2 ">
     <h4>Leave a comment:</h4>
-    <div class="row">
+    <div class="row bg-warning">
         <div class="col-md-8 col-lg-8 col-xl-8 col-sm-12">
             <form action="" method="post" role="form">
 
@@ -123,6 +111,9 @@ if (isset($_POST['create_comment'])) {
     </div>
 
 </div>
+<br>
+<div class="container ">
+<div><h2>Post Comment</h2></div>
 <?php
 
 $the_post_id = $_GET['p_id'];
@@ -131,6 +122,7 @@ $query .= "AND comment_status ='Approved' ";
 $query .= "ORDER BY comment_id DESC";
 
 $select_comment_query = mysqli_query($connection, $query);
+
 if (!$select_comment_query) {
     die('failed query' . mysqli_error($connection));
 }
@@ -140,8 +132,7 @@ while ($row = mysqli_fetch_assoc($select_comment_query)) {
     $comment_author = $row['comment_author'];
 
     ?>
-    <div class=" well container">
-        <div><h2>View Comment</h2></div>
+    
         <div class="media">
             <a class="pull-left" href="">
                 <img class="media-object" src="" alt="">
@@ -158,18 +149,15 @@ while ($row = mysqli_fetch_assoc($select_comment_query)) {
                 <?php echo $comment_content; ?>
             </div>
         </div>
-    </div>
-
 
 <?php } ?>
-
+</div>
 <div class="divider_full mt-5 img-fluid"></div>
-
-
 <div class="text-center"><h1>Related Post</h1></div>
 
 <div class="container">
-    <div class="row">
+<!--   <div class="row">-->
+        <ul class="list-unstyled video-list-thumbs row">
         <?php
         $query = "SELECT * FROM post WHERE post_category_id= {$post_category_id} LIMIT 6";
         $related_post = mysqli_query($connection, $query);
@@ -184,28 +172,36 @@ while ($row = mysqli_fetch_assoc($select_comment_query)) {
             $post_details = $row['post_details'];
             $post_image = $row['post_image'];
 
-
             ?>
+           <!--  alternative -->
 
-            <div class="col-md-3 col-lg-3 col-sm-12 ">
+<!--            <div class="col-md-3 col-lg-3 col-sm-12 ">-->
+<!--                <a href="post.php?source=post_details&p_id=--><?php //echo $post_id ?><!--">-->
+<!--                    <img src="assets/images/blog/--><?php //echo $post_image ?><!--" alt="img" class="img-fluid h-auto w-100"/>-->
+<!--                    <div>-->
+<!--                        <h2>--><?php //echo $post_title ?><!-- </h2>-->
+<!--                        <p>--><?php //echo $post_topic ?><!-- <span class="text-danger">-->
+<!--                                    --><?php //echo $post_details ?><!--</span></p>-->
+<!--                    </div>-->
+<!--                </a>-->
+<!--                <div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+
+
+
+            <li class="col-lg-3 col-sm-4 col-4 col-xs-3">
                 <a href="post.php?source=post_details&p_id=<?php echo $post_id ?>">
-                    <img src="assets/images/blog/<?php echo $post_image ?>" alt="img" class="img-fluid h-auto w-100"/>
-                    <div>
-                        <h2><?php echo $post_title ?> </h2>
-                        <p><?php echo $post_topic ?> <span class="text-danger">
-                                    <?php echo $post_details ?></span></p>
-                    </div>
+                    <img src="assets/images/blog/<?php echo $post_image ?>" alt="img" class="img-responsive h-auto w-100" height="130px" />
+                    <h2><?php echo $post_title ?></h2>
+                    <span class="glyphicon glyphicon-play-circle"></span>
+                    <span class="textxbold-white"><?php echo $post_details ?></span>
                 </a>
-                <div>
-                    <!--                    <p><i class="text-warning fa fa-video-camera"></i>-->
-                    <!--                        <span class="text-danger textblack"> <a target="blank" href="-->
-                    <?php //echo $post_slide
-                    ?><!--">download slide link</a> </span>-->
-                    <!--                    </p>-->
-                </div>
-            </div>
+            </li>
 
         <?php } ?>
+        </ul>
     </div>
 
 </div>

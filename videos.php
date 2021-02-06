@@ -12,7 +12,7 @@
 <!-- ---------- -->
 
 <section>
-    <div class="container-fluid bg-book">
+    <div class="container-fluid bg-book"><br><br>
         <h2 class="textblack text-center pt-5 text-white font-20">Videos</h2>
         <div class="divider"></div>
     </div>
@@ -49,7 +49,7 @@
                 $page_1 =($page * 8)- 8;
             }
 
-            $post_query_count= "SELECT * FROM post WHERE post_status='published'";
+            $post_query_count= "SELECT * FROM post WHERE post_status='published'ORDER BY post_id DESC";
             $find_count=mysqli_query($connection, $post_query_count);
             $count = mysqli_num_rows($find_count);
             $count=ceil($count/9);
@@ -86,15 +86,21 @@
                 </div>
             <?php } ?>
 
-            <ul class="pager">
-                <?php
-                for($i=1; $i<=$count; $i++){
-                    echo "  <li><a href='blog.php?page={$i}'>{$i}</a></li>";
-                }
-                ?>
-
-
-            </ul>
+            <div class="container mt-5 ">
+                <ul class="link-n">
+                    <?php
+                    for($i=1; $i<=$count; $i++){
+                        if($i==$page){
+                            echo " <li><a class='text-warning link-n p-1' href='videos.php?page={$i}'>{$i}</a></li>";
+                            //echo "  <li class='page-item'><a class='active_link' href='blog.php?page={$i}'><button class='btn-warning'>{$i}</button> </a></li>";
+                        }else{
+                            echo"<li><a class='link-n text-dark p-1' href='videos.php?page={$i}'>{$i}</a></li>";
+                        }
+                        // echo "  <li class='page-item'><a class='page-link' href='blog.php?page={$i}'>{$i}</a></li>";}
+                    }
+                    ?>
+                </ul>
+            </div>
 
 </section>
 

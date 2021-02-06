@@ -28,14 +28,14 @@
                 <div class="row  my-5 g-1">
                     <div class="col-md-12  ">
                         <img src="assets/images/blog/<?php echo $blog_post_image ?>"
-                             class="card-img-top"  style="max-height: 450px" class="img-fluid  w-100"/>
+                             class="card-img-top"  style="max-height: 450px" class="img-fluid w-100"/>
                     </div>
                     <div class="col-md-12">
-                        <div class="card-body text-center">
+                        <div class="card-body ">
                             <h2 class="mt-5 mb-3 text-center"><b class="mt-3 mb-5"><?php echo $blog_post_title ?></b>
                             </h2>
                             <div class="divider_full mt-5 img-fluid"></div>
-                            <p class="text-center">
+                            <p class="text-left">
                                 <?php echo $blog_post_details ?>
                             </p>
 
@@ -79,9 +79,9 @@ if (isset($_POST['create_comment'])) {
 
 ?>
 
-<div class=" well container mt-2 ">
+<div class="  container mt-2 ">
     <h4>Leave a comment:</h4>
-    <div class="row">
+    <div class="row bg-warning">
         <div class="col-md-8 col-lg-8 col-xl-8 col-sm-12">
             <form action="" method="post" role="form">
 
@@ -107,6 +107,9 @@ if (isset($_POST['create_comment'])) {
     </div>
 
 </div>
+<br>
+<div class="container ">
+<div><h2>Post Comment</h2></div>
 <?php
 
 $the_post_id = $_GET['p_id'];
@@ -125,9 +128,8 @@ while ($row = mysqli_fetch_assoc($select_comment_query)) {
     $comment_author = $row['comment_author'];
 
     ?>
-    <div class=" well container">
-        <div><h2>View Comment</h2></div>
-        <div class="media">
+    
+        <div class="media m-2 ">
             <a class="pull-left" href="">
                 <img class="media-object" src="" alt="">
             </a>
@@ -143,10 +145,9 @@ while ($row = mysqli_fetch_assoc($select_comment_query)) {
                 <?php echo $comment_content; ?>
             </div>
         </div>
-    </div>
-
 
 <?php } ?>
+</div>
 
 <div class="container">
 <div class="divider_full mt-5 img-fluid"></div>

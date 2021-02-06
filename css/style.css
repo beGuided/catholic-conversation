@@ -75,12 +75,26 @@ li{
     background: url(../assets/images/blog/slant-bg.png) no-repeat;
     background-size: cover;
 }
+
+.bg-guys{
+    height: 200px;
+    background: url(../assets/images/blog/guys.jpg) no-repeat rgb(117, 116, 116);
+    background-size: cover;   
+    background-blend-mode: multiply;
+}
+.bg-teacher{
+    height: 200px;
+    background: url(../assets/images/blog/teacher.jpeg) no-repeat rgb(117, 116, 116);
+    background-size: cover;   
+    background-blend-mode: multiply;}
 .bg-book{
     height: 200px;
     background: url(../assets/images/blog/ryoji-iwata-IBaVuZsJJTo-unsplash@3x.png) no-repeat rgb(117, 116, 116);
     background-size: cover;   
     background-blend-mode: multiply;
 }
+
+
 .bg-about{
     height: 200px;
      background: url(../assets/images/blog/ryoji-iwata-IBaVuZsJJTo-unsplash@3x.png) no-repeat rgb(117, 116, 116);

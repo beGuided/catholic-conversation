@@ -153,6 +153,23 @@
             <div class="row">
                 <?php
 
+                if(isset($_GET['page'])){
+                    $page=$_GET['page'];
+                }else{
+                    $page="";
+                }
+
+                if($page == "" || $page ==1){
+                    $page_1= 0;
+                }else{
+                    $page_1 =($page * 8)- 8;
+                }
+
+                $post_query_count= "SELECT * FROM podcast WHERE podcast_status ='published'";
+                $find_count=mysqli_query($connection, $post_query_count);
+                $count = mysqli_num_rows($find_count);
+                $count=ceil($count/9);
+
                 $query = "SELECT * FROM podcast WHERE podcast_status='published' ";
                 $query .= "ORDER BY podcast_id DESC LIMIT 4 ";
                 $select_podcast = mysqli_query($connection, $query);
@@ -201,19 +218,23 @@
 
 
     <!-- next button start -->
-    <div class="container ">
+
+
+    <div class="container mt-5 ">
         <ul class="link-n">
-            <li><a class="link-n text-dark p-1" href="#">
-                    <p>
-                        < </p>
-                </a></li>
-            <li><a class="text-warning link-n p-1" href="#">1</a></li>
-            <li><a class="link-n text-dark p-1" href="#">2</a></li>
-            <li><a class="link-n text-dark p-1" href="#">3</a></li>
-            <li><a class="link-n text-dark p-1" href="#">4</a></li>
-            <li><a class="link-n text-dark p-1" href="#">. . .</a></li>
-            <li><a class="link-n text-dark p-1" href="#">10</a></li>
-            <li><a class="link-n text-dark p-1" href="#"> > </a></li>
+            <?php
+            for($i=1; $i<=$count; $i++){
+                if($i==$page){
+                    echo " <li><a class='text-warning link-n p-1' href='podcasts.php?page={$i}'>{$i}</a></li>";
+                    //echo "  <li class='page-item'><a class='active_link' href='blog.php?page={$i}'><button class='btn-warning'>{$i}</button> </a></li>";
+                }else{
+                    echo"<li><a class='link-n text-dark p-1' href='podcasts.php?page={$i}'>{$i}</a></li>";
+                }
+                // echo "  <li class='page-item'><a class='page-link' href='blog.php?page={$i}'>{$i}</a></li>";}
+            }
+            ?>
+
+
         </ul>
     </div>
     <!-- next button end -->

@@ -77,35 +77,33 @@
                 <!---------->
             </div>
             <div class="divider_full img-fluid"></div>
-            <div class="row m-auto">
-                <div class="col-lg-5 col-md-3 "></div>
-                <div class="col-1 col-lg-1 col-md-2 col-sm-4  text-center">
-                    <i class="fa fa-whatsapp text-dark bg-warning btn px-4 py-3"></i>
+            <div class="container-fluid"> 
+            <div class="row ">
+                <div class="col-lg-12 col-md-12 col-sm-8 text-center">
+
+                    <a href="#">
+                    <i class="fa fa-whatsapp text-dark bg-warning btn "></i>
+                    </a>
+                    <a href="#">
+                    <i class="fa fa-play text-dark bg-warning btn "></i>
+                    </a>
+                    <a href="#">
+                <i class="fa fa-video-camera text-dark bg-warning btn "></i>
+                </a>
                 </div>
-                <div class="col-1 col-lg-1 col-md-2 col-sm-4  text-center">
-                    <i class="fa fa-play text-dark bg-warning btn px-4 py-3"></i>
-                </div>
-                <div class="col-1 col-lg-1 col-md-2 col-sm-4  text-center">
-                    <i class="fa fa-video-camera text-dark bg-warning btn px-4 py-3"></i>
-                </div>
-                <div class="col-lg-0  col-md-0  "></div>
             </div>
+            </div>
+
             <h6 class="text-center mt-4"><small class=" text-white">All rights reserved. © 2020 Catholic
                     Conversations</small>
             </h6>
+            </div>
         </div>
     </footer>
 
     <!--------->
     <!-- footer end -->
     <!--------->
-
-
-
-
-
-
-
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

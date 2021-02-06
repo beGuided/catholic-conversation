@@ -3,7 +3,6 @@
 <?php
 if(isset($_POST['subscribe'])){
     $user_email=escape($_POST['email']);
-echo $user_email;
 
     $query = "INSERT INTO users( user_firstName, user_lastName, user_role, user_name, User_email,user_password,randSalt)";
     $query.="VALUES('null', 'null','subscriber','null','{$user_email}','null','null')";
@@ -15,9 +14,9 @@ echo $user_email;
 
 ?>
 
-<div class="container-fluid p-4">
+<div class="container-fluid p-4" id="subscribe">
     <div class="container p-4 bg-light">
-        <h3 class="text-center"><b>Receive updates from Catholic Conversations</b></h3>
+        <h3 class="text-center"><b> Subscribe to Receive updates from Catholic Conversations</b></h3>
         <form action="" method="post">
             <div class="d-flex form-group text-center mt-5">
                 <input type="email" class="form-control " name="email" id="email"

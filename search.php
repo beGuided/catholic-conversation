@@ -1,83 +1,47 @@
-<?php include "includes/header.php"?>
+<?php include "includes/header.php" ?>
+
+<!-- nav section start -->
+<?php include "includes/nav.php" ?>
+</nav> <!-- nav section end -->
+
+<?php include "includes/db.php" ?>
+<!-- slider start -->
+<div class="">
+    <?php include "includes/slider.php" ?>
+</div>
 
 
 
- <!-- nav section start -->
- <?php include "includes/nav.php"?> 
- </nav> <!-- nav section end -->
 
-        <!-- slider start -->
-        <?php include "includes/db.php"?>
-        <div class="container-fluid ">
+ 
 
-            <div class="row">
-                <div class="col-xl-12 mx-p px-0 ">
-                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
-                            <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
-
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="assets/images/slider/Group 26.png"
-                                    class="img.fluid w-100 " alt="">
-
-                                <img src="" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <div class="row ">
-                                        <div class="mt-3">
-                                            <h3>DOCTRINAL CLASSES WITH YOUNG MEN</h3>
-                                        </div>
-                                        <div class="divider">
-
-                                        </div>
-                                        <div>
-                                            <p class=" mx-5">Lorem ipsum dolor sit amet, consetetur
-                                                sadipscing elitr, sed diam nonumy eirmod
-                                                tempor invidunt ut labore et dolore magna
-                                                aliquyam erat, sed diam voluptua. At vero</p>
-                                            <button class="btn btn-warning text-light">REGISTER ></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="assets/images/slider/Group 26.png"
-                                    class="img.fluid w-100 " alt="">
-
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Second slide label</h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-
-                            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid p-5 mt-5 mb-5">
-                <div class="container col mx-6 justify-content-center px-5">
-                    <h1> Catholic Conversations </h1>
-                    <p>is here as a space for young men, seeking deeper understanding of the
-                        Catholic faith, to meet, discuss, seek clarification about and learn Catholic doctrine. </p>
-
-                    <button class="btn btn-warning text-light px-5"><b>REGISTER ></b></button>
-
-                </div>
-            </div>
+<div class="container  my-5  ">
+        <div class="row ">
+            <h1> Catholic Conversations </h1>
+            <p>is here as a space for young men, seeking deeper understanding of the
+                Catholic faith, to meet, discuss, seek clarification about and learn Catholic doctrine. </p>
+</div>
+<a href="#subscribe">
+<button class="btn btn-warning text-light "><b>SUBSCRIBE ></b></button>
+</a>
         </div>
+        <div class="container-fluid"> 
+            <div class="row ">
+                <div class="col-lg-12 col-md-12 col-sm-8 text-center">
+
+                    <a href="#">
+                    <i class="fa fa-whatsapp text-dark bg-warning btn "></i>
+                    </a>
+                    <a href="#">
+                    <i class="fa fa-play text-dark bg-warning btn "></i>
+                    </a>
+                    <a href="#">
+                <i class="fa fa-video-camera text-dark bg-warning btn "></i>
+                </a>
+                </div>
+            </div>
+            </div>
+
 
         <!-- 
             slider end
@@ -118,23 +82,25 @@ while($row = mysqli_fetch_assoc($search_query)){
     $post_slide=escape($row['post_slide_link']);
     $post_image=escape($row['post_image']);
     $post_video_link=escape($row['post_video_link']);
+      $post_status = escape($row['post_status']);
 
     ?>
-    <div class="col-md-3 col-lg-3 col-sm-12 ">
-        <a href="post.php?source=post_details&p_id=<?php echo $post_id ?>">
-            <img src="assets/images/blog/<?php echo $post_image ?>" alt="img" class="img-fluid h-auto w-100"/>
-            <div>
-                <h2><?php echo $post_title ?> </h2>
-                <p><?php echo $post_topic ?> <span class="text-danger">
+     <div class="col-md-3 col-lg-3 col-sm-12 ">
+                        <a href="post.php?source=post_details&p_id=<?php echo $post_id ?>">
+                            <img src="assets/images/blog/<?php echo $post_image ?>" style="max-height: 250px" alt="img" class="img-fluid h-auto w-100"/>
+                        <div>
+                            <h2><?php echo $post_title ?> </h2>
+                            <p><?php echo $post_topic ?> <span class="text-danger">
                                     <?php echo $post_details ?></span></p>
-            </div>
-        </a>
-        <div>
-            <p><i class="text-warning fa fa-video-camera"></i>
-                <span class="text-danger textblack"> <a target="blank" href="<?php echo $post_slide ?>">download slide link</a> </span>
-            </p>
-        </div>
-    </div>
+                        </div>
+                        </a>
+                        <div>
+                            <p><i class="text-warning fa fa-video-camera"></i>
+                                <span class="text-danger textblack"> <a target="blank" href="<?php echo $post_slide ?>">download slide link</a> </span>
+                            </p>
+                        </div>
+                    </div>
+
             <?php } }?>
                   
 
@@ -174,30 +140,32 @@ confirm_query($blogPost_query);
              $blog_post_id= escape($row['blog_post_id']);
             $blog_post_title= escape($row['blog_post_title']);
             $blog_post_image=escape($row['blog_post_image']);
-            $blog_post_details=escape($row['blog_post_details']);
+            $blog_post_details = escape(substr($row['blog_post_details'],0,400));
+             $blog_post_status = escape($row['blog_post_status']);
+
 
 ?>
 
-             <div class="card my-3">
-                 <div class="row g-1">
-                     <div class="col-md-5">
-                         <a href="post.php?source=blog_post_details&p_id=<?php echo $blog_post_id ?>">
-                             <img src="assets/images/blog/<?php echo $blog_post_image ?>"
-                                  class="img-fluid w-100" alt="image"/></a>
-                     </div>
-                     <div class="col-md-7">
-                         <div class="card-body text-center">
-                             <h5 class="card-title"><?php echo $blog_post_title ?></h5>
-                             <p class="text-center">
-                                 <?php echo $blog_post_details ?>
-                             </p>
-                             <a href="post.php?source=blog_post_details&p_id=<?php echo $blog_post_id ?>">
-                                 <button class="btn  btn-warning px-5 text-white"><b>></b></button>
-                             </a>
-                         </div>
-                     </div>
-                 </div>
-             </div>
+           <div class="card my-3">
+                    <div class="row g-1">
+                        <div class="col-md-5">
+                            <a href="post.php?source=blog_post_details&p_id=<?php echo $blog_post_id ?>">
+                                <img src="assets/images/blog/<?php echo $blog_post_image ?>"
+                                    style="max-height: 250px"  class="img-fluid w-100" alt="image"/></a>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body text-center">
+                                <h5 class="card-title"><?php echo $blog_post_title ?></h5>
+                                <p class="text-center">
+                                    <?php echo $blog_post_details ?>
+                                </p>
+                                <a href="post.php?source=blog_post_details&p_id=<?php echo $blog_post_id ?>">
+                                <button class="btn  btn-warning px-5 text-white"><b>></b></button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
            
        <?php  }  }    ?>
 
@@ -235,35 +203,33 @@ confirm_query($blogPost_query);
             </div>
         </div>
 
-        <!---------------->
-        <!-- doctrinal begin -->
-        <!---------------->
+      <!---------------->
+    <!-- doctrinal begin -->
+    <!---------------->
 
 
-        <div class="container col-xl-11 col-sm-12 col-md-11 my-4">
-            <div class="row ">
-                <div class="col-12  ">
-                    <div class="card " style="width:auto;">
-                        <img src=" assets/images/blog/dylan-gillis-KdeqA3aTnBY-unsplash-1@3x.png "
-                            class="card-img-top bg-image" alt="image">
-                        <div class="my-4"></div>
-                        <div class="card-body text-center px-4">
-                            <h3 class="card-title">Doctrinal Classes with Young Men</h3>
-                            <div class="divider_full col-sm-12 img-fluid"></div>
+    <div class="container col-xl-11 col-sm-12 col-md-11 my-4">
+        <div class="row ">
+            <div class="col-12  ">
+                <div class="card " style="width:auto;">
+                    <img src=" assets/images/blog/teacher.jpeg "
+                         class="card-img-top img-fluid"  style="max-height: 450px" alt="image">
+                    <div class="my-4"></div>
+                    <div class="card-body text-center px-4">
+                        <h3 class="card-title">Doctrinal Classes with Young Men</h3>
+                        <div class="divider_full col-sm-12 img-fluid"></div>
 
-                            <p class="card-text mx-5 text-left ">
-                                Very much like the Catholic conversations, these are weekly classes held in the
-                                various centres of Opus Dei across Nigeria. Young men meet to learn about the Catholic
-                                faith
-                                and doctrine (Sacred Scripture and Sacred Tradition). COVID-19 has changed much and at
-                                the
-                                moment, these doctrinal classes hold online every Monday at 5 pm. Register here below to
-                                attend.</p>
+                        <p class="card-text mx-5 text-left ">
+                            Very much like the Catholic conversations, these are weekly classes held in the
+                            various centres of Opus Dei across Nigeria. Young men meet to learn about the Catholic
+                            faith
+                            and doctrine (Sacred Scripture and Sacred Tradition). COVID-19 has changed much and at
+                            the
+                            moment, these doctrinal classes hold online every Monday at 5 pm. Register here below to
+                            attend.</p>
 
-                            <a href="#" class="btn btn-warning  text-light float-right my-3"
-                                style="width: 300px;">REGISTER ></a>
-                        </div>
-
+                        <a href="#subscribe" class="btn btn-warning  text-light float-right my-3"
+                           style="max-width: 300px;">SUBSCRIBE ></a>
                     </div>
 
                 </div>
@@ -272,42 +238,40 @@ confirm_query($blogPost_query);
 
         </div>
 
+    </div>
+
+    <!---------------->
+    <!-- doctrinal end -->
+    <!---------------->
 
 
+ <!---------------->
+    <!-- doctrinal begin -->
+    <!---------------->
 
-        <!---------------->
-        <!-- doctrinal end -->
-        <!---------------->
 
+    <div class="container col-xl-11 col-sm-12 col-md-11 my-4">
+        <div class="row ">
+            <div class="col-12  ">
+                <div class="card " style="width:auto;">
+                    <img src=" assets/images/blog/fr basil.png "
+                         class="card-img-top"  style="max-height: 450px" alt="image">
+                    <div class="my-4"></div>
+                    <div class="card-body text-center px-4">
+                        <h3 class="card-title">Spiritual Direction</h3>
+                        <div class="divider_full col-sm-12 img-fluid"></div>
 
-        <!---------------->
-        <!-- Meditations begin -->
-        <!---------------->
+                        <p class="card-text mx-5 text-left ">
+                            Very much like the Catholic conversations, these are weekly classes held in the
+                            various centres of Opus Dei across Nigeria. Young men meet to learn about the Catholic
+                            faith
+                            and doctrine (Sacred Scripture and Sacred Tradition). COVID-19 has changed much and at
+                            the
+                            moment, these doctrinal classes hold online every Monday at 5 pm. Register here below to
+                            attend.</p>
 
-        <div class="container col-xl-11 col-sm-12 col-md-11 my-4">
-            <div class="row ">
-                <div class="col-12  ">
-                    <div class="card " style="width:auto;">
-                        <img src=" assets/images/blog/dylan-gillis-KdeqA3aTnBY-unsplash-1@3x.png "
-                            class="card-img-top bg-image" alt="image">
-                        <div class="my-4"></div>
-                        <div class="card-body text-center px-4">
-                            <h3 class="card-title">Doctrinal Classes with Young Men</h3>
-                            <div class="divider_full  col-sm-12 img-fluid"></div>
-
-                            <p class="card-text mx-5 text-left ">
-                                Very much like the Catholic conversations, these are weekly classes held in the
-                                various centres of Opus Dei across Nigeria. Young men meet to learn about the Catholic
-                                faith
-                                and doctrine (Sacred Scripture and Sacred Tradition). COVID-19 has changed much and at
-                                the
-                                moment, these doctrinal classes hold online every Monday at 5 pm. Register here below to
-                                attend.</p>
-
-                            <a href="#" class="btn btn-warning  text-light float-right my-3"
-                                style="width: 300px;">REGISTER ></a>
-                        </div>
-
+                        <a href="#subscribe" class="btn btn-warning  text-light float-right my-3"
+                           style="max-width: 300px;">SUBSCRIBE ></a>
                     </div>
 
                 </div>
@@ -315,6 +279,51 @@ confirm_query($blogPost_query);
             </div>
 
         </div>
+
+    </div>
+
+
+    <!---------------->
+    <!-- doctrinal end -->
+    <!---------------->
+
+
+    <!---------------->
+    <!-- Meditations begin -->
+    <!---------------->
+
+    <div class="container col-xl-11 col-sm-12 col-md-11 my-4">
+        <div class="row ">
+            <div class="col-12  ">
+                <div class="card " >
+                    <img src=" assets/images/blog/dylan-gillis-KdeqA3aTnBY-unsplash-1@3x.png "
+                              class="card-img-top "  style="max-height: 450px"  alt="image">
+
+                    <div class="my-4"></div>
+                    <div class="card-body text-center px-4">
+                        <h3 class="card-title">Meditation</h3>
+                        <div class="divider_full  col-sm-12 img-fluid"></div>
+
+                        <p class="card-text mx-5 text-left ">
+                            Very much like the Catholic conversations, these are weekly classes held in the
+                            various centres of Opus Dei across Nigeria. Young men meet to learn about the Catholic
+                            faith
+                            and doctrine (Sacred Scripture and Sacred Tradition). COVID-19 has changed much and at
+                            the
+                            moment, these doctrinal classes hold online every Monday at 5 pm. Register here below to
+                            attend.</p>
+
+                        <a href="#subscribe" class="btn btn-warning  text-light float-right my-3"
+                           style="max-width:300px;">SUBSCRIBE ></a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 
 

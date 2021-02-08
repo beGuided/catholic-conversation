@@ -71,7 +71,7 @@
 
                 <div class="col-md- col-12 col-sm-12 col-lg-4 col-xl-4 position-relative my-1  ">
                     <a href="post.php?source=blog_post_details&p_id=<?php echo $blog_post_id ?>">
-                    <img src="assets/images/blog/<?php echo $blog_post_image;?>" style="width: 100%;" alt="test" class="img-responsive m-0">
+                    <img src="assets/images/blog/<?php echo $blog_post_image;?>" style="max-height:250px;" alt="test" class="img-fluid img-responsive w-100 m-0">
                     </a>
                     <div class="position-absolute p-5 top-0 end-0 ">
                         <h3 class="text-white bg-blog-back"><?php echo $blog_post_title;?></h3>

@@ -176,7 +176,7 @@ while ($row = mysqli_fetch_assoc($select_comment_query)) {
             <div class="col-md-3 col-lg-3 col-12">
                 <a href="post.php?source=blog_post_details&p_id=<?php echo $blog_post_id ?>">
                     <img src="assets/images/blog/<?php echo $blog_post_image ?>"
-                         class="img-fluid w-100" alt="image"/>
+                        style="max-height: 200px" class="img-fluid w-100" alt="image"/>
                 <div class="card-body text-center">
                     <h5 class="card-title"><?php echo $blog_post_title ?></h5>
                     <p class="text-center"><?php echo $blog_post_details ?></p>

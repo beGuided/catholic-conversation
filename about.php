@@ -29,49 +29,7 @@
             </div>
         </div>
         <div class="container mx-6 justify-content-center p-1">
-            <p class="m-0 p-0">Opus Dei, in full, the Prelature of the Holy Cross and Opus Dei, is a personal
-                prelature
-                of the Catholic Church, founded in 1928 by Spanish priest, St. Josemaria Esciva. It has over
-                90,000
-                members, a large majority of whom are lay men and women, the others being priests. Opus Dei
-                members
-                strive to live out their Christian faith fully in their life and work — they strive to be saints
-                through
-                their ordinary life.
-                Other aspects of the spirituality of Opus Dei are divine filiation (awareness of being a child
-                of
-                God
-                and acting accordingly), ordinary life (finding God in everyday things), charity and apostolate
-                (like
-                the early Christians, giving witness to their faith and helping others to know Christ), love for
-                freedom
-                (in anything that is not a matter of faith each person makes their own decisions and takes
-                responsibility for them), prayer and sacrifice (trying to have a constant dialogue with God and
-                being
-                ready to put their interests and those of others before their own) and unity of life (trying to
-                live
-                their faith in every aspect of their life) (FAQs, opusdei.org).
-                and acting accordingly), ordinary life (finding God in everyday things), charity and apostolate
-                (like
-                the early Christians, giving witness to their faith and helping others to know Christ), love for
-                freedom
-                (in anything that is not a matter of faith each person makes their own decisions and takes
-                responsibility for them), prayer and sacrifice (trying to have a constant dialogue with God and
-                being
-                ready to put their interests and those of others before their own) and unity of life (trying to
-                live
-                their faith in every aspect of their life) (FAQs, opusdei.org).
-                and acting accordingly), ordinary life (finding God in everyday things), charity and apostolate
-                (like
-                the early Christians, giving witness to their faith and helping others to know Christ), love for
-                freedom
-                (in anything that is not a matter of faith each person makes their own decisions and takes
-                responsibility for them), prayer and sacrifice (trying to have a constant dialogue with God and
-                being
-                ready to put their interests and those of others before their own) and unity of life (trying to
-                live
-                their faith in every aspect of their life) (FAQs, opusdei.org).
-                Read more about the activities, the Prelate and the message of Opus Dei through the link below.
+            <p class="m-0 p-0">Catholic Conversations is here as a space for young men, seeking deeper understanding of the Catholic faith, to meet, discuss, seek clarification about and learn Catholic doctrine. 
             </p>
 <!--            <a href="https://opusdei.org" target="blank" class="text-warning ">-->
 <!--                <h4 class="m-0 p-0">Learn more</h4>-->

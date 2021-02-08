@@ -7,7 +7,7 @@
                 <!-- left column start -->
                 <!---------->
                 <div class="col-lg-6 col-md-12 col-sm-12  p-5">
-                    <img src="" alt="logo">
+                    <img src="./assets/images/blog/logo.png" alt="logo">
                     <h2><b class=" text-white">Catholic Conversation</b></h2>
                     <p class=" text-white">To reform. Every day a little. This has to be your constant task if you
                         really want to become a
@@ -58,16 +58,13 @@
 
                 <div class="col-lg-6 col-md-12 col-sm-12 p-5">
                     <h2><b class=" text-white">FAQ</b></h2>
-                    <p class=" text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ex ut,
-                        sunt assumenda fuga
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, perferendis. Repellat,
-                        consectetur. Similique nulla molestias, ad qui sequi expedita omnis deserunt dolore eius
-                        necessitatibus totam libero consectetur ratione deleniti aliquid.
-                        voluptas. Quaerat aliquid sed, dolores asperiores vitae, soluta, ratione repudiandae omnis
-                        cumque maiores ipsa. Facilis, et?
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem itaque dolore illo facere
-                        quibusdam animi nisi, quisquam, rem fugiat voluptatum incidunt eligendi! Nobis neque iste quas
-                        esse animi saepe nulla!
+                    <p class=" text-white">
+<!-- 
+
+                        frequently asked question
+ -->
+
+
                     </p>
                 </div>
 

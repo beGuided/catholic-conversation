@@ -81,10 +81,9 @@
                     echo"<h1>no post</h1>";
                 }else{
                     ?>
-
                     <div class="col-md-3 col-lg-3 col-sm-12 ">
                         <a href="post.php?source=post_details&p_id=<?php echo $post_id ?>">
-                            <img src="assets/images/blog/<?php echo $post_image ?>" alt="img" class="img-fluid h-auto w-100"/>
+                            <img src="assets/images/blog/<?php echo $post_image ?>" style="max-height: 250px" alt="img" class="img-fluid h-auto w-100"/>
                         <div>
                             <h2><?php echo $post_title ?> </h2>
                             <p><?php echo $post_topic ?> <span class="text-danger">
@@ -148,7 +147,7 @@
                         <div class="col-md-5">
                             <a href="post.php?source=blog_post_details&p_id=<?php echo $blog_post_id ?>">
                                 <img src="assets/images/blog/<?php echo $blog_post_image ?>"
-                                     class="img-fluid w-100" alt="image"/></a>
+                                    style="max-height: 250px"  class="img-fluid w-100" alt="image"/></a>
                         </div>
                         <div class="col-md-7">
                             <div class="card-body text-center">

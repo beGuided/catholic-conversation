@@ -29,6 +29,9 @@
 a {
     text-decoration: none;
 }
+a:active{
+    color: : black;
+}
 li{
     color: white;
     list-style-type: none;

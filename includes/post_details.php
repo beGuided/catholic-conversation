@@ -45,7 +45,7 @@
                 <div class="col-md-9 col-12 " style="border-bottom: dotted #ffc107">
                     <p>
                      <i class="text-warning fa fa-video-camera"></i>
-                        <span class="text-danger textblack"> <a target="blank" href="<?php echo $post_slide ?>">download slide link</a> </span>
+                        <span class="text-danger textblack"> <a target="blank" download="<?php //echo $post_slide ?>"href="<?php echo $post_slide ?>">download slide link</a> </span>
                     </p>
                 </div>
             <?php } ?>

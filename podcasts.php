@@ -184,8 +184,8 @@
                     $podcast_date = escape($row['podcast_date']);
                     ?>
                     <div class="col-lg- col-md-5 col-sm-12 m-auto">
-                        <img class="img-fluid" src="./assets/images/blog/<?php echo $podcast_image ?>"
-                             alt="book 1">
+                        <img class="img-fluid w-100" src="./assets/images/blog/<?php echo $podcast_image ?>"
+                              style="max-height: 200px" alt="book 1">
                     </div>
                     <div class="col-lg-7 col-md-7 col-sm-12">
                         <div class="card-body">

@@ -1,3 +1,5 @@
+
+
 <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <ol class="carousel-indicators">
     <li data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"></li>
@@ -6,30 +8,38 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="10000">
-      <img src="..." class="d-block w-100" alt="...">
+      <img src="./assets/images/slider/first.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <h5></h5>
+        <h1 class=" text-white">In a busy and distracted world, young men need clearity and directionnow more than ever.</h1>
+        <div class="divider_full w-50"></div>
+         <a href="#subscribe">
+        <button class="btn-warning text-white"> subscribe </button>
+      </a>
       </div>
     </div>
     <div class="carousel-item" data-bs-interval="2000">
-      <img src="..." class="d-block w-100" alt="...">
+      <img src="./assets/images/slider/slide3.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h5></h5>
+        <h1 class=" text-white">cleare ideas and genuine conversations are a vital part of the journey of meaning and purpose</h1>
+        <div class="divider_full w-50"></div>
+        <a href="#subscribe">
+        <button class="btn-warning text-white"> subscribe </button>
+        </a>
       </div>
     </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
+    <!-- <div class="carousel-item">
+      <img src="./assets/images/slider/slide1.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Third slide label</h5>
         <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
       </div>
     </div>
-  </div>
+  </div> -->
   <a class="carousel-control-prev" href="#carouselExampleDark" role="button" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
+    <span class="visually-hidden text-warning">Previous</span>
   </a>
   <a class="carousel-control-next" href="#carouselExampleDark" role="button" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>

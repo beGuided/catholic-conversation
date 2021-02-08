@@ -4,7 +4,8 @@
 
  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark p-3 ">
             <div class="container-fluid">
-                <a class="navbar-brand" href="../assets/images/blog/logo.png"><img src="" alt="logo"></a>
+                <a class="navbar-brand" href="">
+                    <img src="./assets/images/blog/logo.png" alt="logo"></a>
                 <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -13,31 +14,26 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                         <li class="nav-item ">
-                            <a class="nav-link active text-warning" aria-current="page" href="index.php">Home</a>
+                            <a class="nav-link  text-warning" aria-current="page" href="index.php">Home</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link active text-warning" aria-current="page" href="videos.php">video</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active text-warning" aria-current="page" href="blog.php">Blog</a>
+                            <a class="nav-link  text-warning" aria-current="page" href="blog.php">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active text-warning" aria-current="page" href="podcasts.php">podcast</a>
+                            <a class="nav-link text-warning" aria-current="page" href="podcasts.php">podcast</a>
                         </li>
 <!--                        <li class="nav-item">-->
 <!--                            <a class="nav-link active text-warning" aria-current="page" href="books.php">Books</a>-->
 <!--                        </li>-->
-                        <li class="nav-item">
-                            <a class="nav-link active text-warning" aria-current="page" href="admin/">Admin</a>
-                        </li>
+        
 
-                        <li class="nav-item">
-                            <a class="nav-link active text-warning" aria-current="page" href="videos.php">video</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link active text-warning" aria-current="page" href="about.php">about</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active text-warning" aria-current="page" href="login.php">login</a>
-                        </li>
-
+                       
                     </ul>
                     <?php 
 

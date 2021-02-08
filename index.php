@@ -6,9 +6,12 @@
 
 <?php include "includes/db.php" ?>
 <!-- slider start -->
+<div class="">
+    <?php include "includes/slider.php" ?>
+</div>
 
 
-        <?php include "includes/slider.php" ?>
+
 
  
 
@@ -78,10 +81,9 @@
                     echo"<h1>no post</h1>";
                 }else{
                     ?>
-
                     <div class="col-md-3 col-lg-3 col-sm-12 ">
                         <a href="post.php?source=post_details&p_id=<?php echo $post_id ?>">
-                            <img src="assets/images/blog/<?php echo $post_image ?>" alt="img" class="img-fluid h-auto w-100"/>
+                            <img src="assets/images/blog/<?php echo $post_image ?>" style="max-height: 250px" alt="img" class="img-fluid h-auto w-100"/>
                         <div>
                             <h2><?php echo $post_title ?> </h2>
                             <p><?php echo $post_topic ?> <span class="text-danger">
@@ -145,7 +147,7 @@
                         <div class="col-md-5">
                             <a href="post.php?source=blog_post_details&p_id=<?php echo $blog_post_id ?>">
                                 <img src="assets/images/blog/<?php echo $blog_post_image ?>"
-                                     class="img-fluid w-100" alt="image"/></a>
+                                    style="max-height: 250px"  class="img-fluid w-100" alt="image"/></a>
                         </div>
                         <div class="col-md-7">
                             <div class="card-body text-center">
@@ -200,11 +202,53 @@
         <div class="row ">
             <div class="col-12  ">
                 <div class="card " style="width:auto;">
-                    <img src=" assets/images/blog/dylan-gillis-KdeqA3aTnBY-unsplash-1@3x.png "
-                         class="card-img-top"  style="max-height: 400px" alt="image">
+                    <img src=" assets/images/blog/teacher.jpeg "
+                         class="card-img-top img-fluid"  style="max-height: 450px" alt="image">
                     <div class="my-4"></div>
                     <div class="card-body text-center px-4">
                         <h3 class="card-title">Doctrinal Classes with Young Men</h3>
+                        <div class="divider_full col-sm-12 img-fluid"></div>
+
+                        <p class="card-text mx-5 text-left ">
+                            Very much like the Catholic conversations, these are weekly classes held in the
+                            various centres of Opus Dei across Nigeria. Young men meet to learn about the Catholic
+                            faith
+                            and doctrine (Sacred Scripture and Sacred Tradition). COVID-19 has changed much and at
+                            the
+                            moment, these doctrinal classes hold online every Monday at 5 pm. Register here below to
+                            attend.</p>
+
+                        <a href="#subscribe" class="btn btn-warning  text-light float-right my-3"
+                           style="max-width: 300px;">SUBSCRIBE ></a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!---------------->
+    <!-- doctrinal end -->
+    <!---------------->
+
+
+ <!---------------->
+    <!-- doctrinal begin -->
+    <!---------------->
+
+
+    <div class="container col-xl-11 col-sm-12 col-md-11 my-4">
+        <div class="row ">
+            <div class="col-12  ">
+                <div class="card " style="width:auto;">
+                    <img src=" assets/images/blog/fr basil.png "
+                         class="card-img-top"  style="max-height: 450px" alt="image">
+                    <div class="my-4"></div>
+                    <div class="card-body text-center px-4">
+                        <h3 class="card-title">Spiritual Direction</h3>
                         <div class="divider_full col-sm-12 img-fluid"></div>
 
                         <p class="card-text mx-5 text-left ">
@@ -243,11 +287,11 @@
             <div class="col-12  ">
                 <div class="card " >
                     <img src=" assets/images/blog/dylan-gillis-KdeqA3aTnBY-unsplash-1@3x.png "
-                              class="card-img-top "  style="max-height: 400px"  alt="image">
+                              class="card-img-top "  style="max-height: 450px"  alt="image">
 
                     <div class="my-4"></div>
                     <div class="card-body text-center px-4">
-                        <h3 class="card-title">Doctrinal Classes with Young Men</h3>
+                        <h3 class="card-title">Meditation</h3>
                         <div class="divider_full  col-sm-12 img-fluid"></div>
 
                         <p class="card-text mx-5 text-left ">

@@ -71,7 +71,7 @@
 
                 <div class="col-md-3 col-lg-3 col-sm-12 ">
                     <a href="post.php?source=post_details&p_id=<?php echo $post_id ?>">
-                        <img src="assets/images/blog/<?php echo $post_image ?>" alt="img" class="img-fluid h-auto w-100"/>
+                        <img src="assets/images/blog/<?php echo $post_image ?>"style="max-height: 250px"  alt="img" class="img-fluid h-auto w-100"/>
                         <div>
                             <h2><?php echo $post_title ?> </h2>
                             <p><?php echo $post_topic ?> <span class="text-danger">

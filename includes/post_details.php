@@ -85,7 +85,7 @@ if (isset($_POST['create_comment'])) {
 
 <div class=" well container mt-2 ">
     <h4>Leave a comment:</h4>
-    <div class="row bg-warning">
+    <div class="row ">
         <div class="col-md-8 col-lg-8 col-xl-8 col-sm-12">
             <form action="" method="post" role="form">
 
@@ -156,8 +156,8 @@ while ($row = mysqli_fetch_assoc($select_comment_query)) {
 <div class="text-center"><h1>Related Post</h1></div>
 
 <div class="container">
-<!--   <div class="row">-->
-        <ul class="list-unstyled video-list-thumbs row">
+<div class="row">
+       
         <?php
         $query = "SELECT * FROM post WHERE post_category_id= {$post_category_id} LIMIT 6";
         $related_post = mysqli_query($connection, $query);
@@ -175,33 +175,24 @@ while ($row = mysqli_fetch_assoc($select_comment_query)) {
             ?>
            <!--  alternative -->
 
-<!--            <div class="col-md-3 col-lg-3 col-sm-12 ">-->
-<!--                <a href="post.php?source=post_details&p_id=--><?php //echo $post_id ?><!--">-->
-<!--                    <img src="assets/images/blog/--><?php //echo $post_image ?><!--" alt="img" class="img-fluid h-auto w-100"/>-->
-<!--                    <div>-->
-<!--                        <h2>--><?php //echo $post_title ?><!-- </h2>-->
-<!--                        <p>--><?php //echo $post_topic ?><!-- <span class="text-danger">-->
-<!--                                    --><?php //echo $post_details ?><!--</span></p>-->
-<!--                    </div>-->
-<!--                </a>-->
-<!--                <div>-->
-<!--                </div>-->
-<!--            </div>-->
+            <div class="col-md-3 col-lg-3 col-sm-12 ">
+               <a href="post.php?source=post_details&p_id=<?php echo $post_id ?>">
 
-
-
-
-            <li class="col-lg-3 col-sm-4 col-4 col-xs-3">
-                <a href="post.php?source=post_details&p_id=<?php echo $post_id ?>">
-                    <img src="assets/images/blog/<?php echo $post_image ?>" alt="img" class="img-responsive h-auto w-100" height="130px" />
-                    <h2><?php echo $post_title ?></h2>
-                    <span class="glyphicon glyphicon-play-circle"></span>
-                    <span class="textxbold-white"><?php echo $post_details ?></span>
+    <!--  <video controls poster="assets/images/blog/<?php //echo $post_image ?>"  style="max-height: 200px" class="img-fluid h-auto w-100"> <source src="" > -->
+                        </video>
+                    <img src="assets/images/blog/<?php echo $post_image ?>" alt="img" style="max-height: 200px"class="img-fluid h-auto w-100"/>
+                    <div>
+                        <h2><?php echo $post_title ?></h2>
+                        <p>><?php echo $post_topic ?><span class="text-danger">
+                               <?php echo $post_details ?></span></p>
+                    </div>
                 </a>
-            </li>
+                <div>
+                </div>
+            </div>
+
 
         <?php } ?>
-        </ul>
     </div>
 
 </div>

@@ -81,7 +81,7 @@ if (isset($_POST['create_comment'])) {
 
 <div class="  container mt-2 ">
     <h4>Leave a comment:</h4>
-    <div class="row bg-warning">
+    <div class="row ">
         <div class="col-md-8 col-lg-8 col-xl-8 col-sm-12">
             <form action="" method="post" role="form">
 

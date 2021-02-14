@@ -81,12 +81,13 @@
                     echo"<h1>no post</h1>";
                 }else{
                     ?>
+
                     <div class="col-md-3 col-lg-3 col-sm-12 ">
                         <a href="post.php?source=post_details&p_id=<?php echo $post_id ?>">
-                            <img src="assets/images/blog/<?php echo $post_image ?>" style="max-height: 250px" alt="img" class="img-fluid h-auto w-100"/>
+                            <img src="assets/images/blog/<?php echo $post_image ?>"  style="max-height:200px;" alt="img" class="img-fluid h-auto w-100"/>
                         <div>
                             <h2><?php echo $post_title ?> </h2>
-                            <p><?php echo $post_topic ?> <span class="text-danger">
+                            <p>><?php echo $post_topic ?> <span class="text-danger">
                                     <?php echo $post_details ?></span></p>
                         </div>
                         </a>
@@ -147,7 +148,7 @@
                         <div class="col-md-5">
                             <a href="post.php?source=blog_post_details&p_id=<?php echo $blog_post_id ?>">
                                 <img src="assets/images/blog/<?php echo $blog_post_image ?>"
-                                    style="max-height: 250px"  class="img-fluid w-100" alt="image"/></a>
+                                     class="img-fluid w-100" alt="image"/></a>
                         </div>
                         <div class="col-md-7">
                             <div class="card-body text-center">
@@ -252,13 +253,10 @@
                         <div class="divider_full col-sm-12 img-fluid"></div>
 
                         <p class="card-text mx-5 text-left ">
-                            Very much like the Catholic conversations, these are weekly classes held in the
-                            various centres of Opus Dei across Nigeria. Young men meet to learn about the Catholic
-                            faith
-                            and doctrine (Sacred Scripture and Sacred Tradition). COVID-19 has changed much and at
-                            the
-                            moment, these doctrinal classes hold online every Monday at 5 pm. Register here below to
-                            attend.</p>
+                          “In the ecclesial service of the ordained minister, it is Christ himself who is present to his Church as Head of his Body, Shepherd of his flock, high priest of the redemptive sacrifice, Teacher of Truth. This is what the Church means by saying that the priest, by virtue of the sacrament of Holy Orders, acts in persona Christi Capitis, in the person of Christ the Head:
+It is the same priest, Christ Jesus, whose sacred person his minister truly represents. Now the minister, by reason of the sacerdotal consecration which he has received, is truly made like to the high priest and possesses the authority to act in the power and place of the person of Christ himself (Catechism of the Catholic Church, 1548).
+The ordained priest acting in the person of Christ has received special graces to guide others closer to Christ. In spiritual direction, there is no judgement and with an openness rooted in the love of Christ and the grace of God, proper guidance is given on living out the Christian faith in daily life. 
+</p>
 
                         <a href="#subscribe" class="btn btn-warning  text-light float-right my-3"
                            style="max-width: 300px;">SUBSCRIBE ></a>
@@ -295,13 +293,10 @@
                         <div class="divider_full  col-sm-12 img-fluid"></div>
 
                         <p class="card-text mx-5 text-left ">
-                            Very much like the Catholic conversations, these are weekly classes held in the
-                            various centres of Opus Dei across Nigeria. Young men meet to learn about the Catholic
-                            faith
-                            and doctrine (Sacred Scripture and Sacred Tradition). COVID-19 has changed much and at
-                            the
-                            moment, these doctrinal classes hold online every Monday at 5 pm. Register here below to
-                            attend.</p>
+                            Meditations
+“Meditation is above all a quest. The mind seeks to understand the why and how of the Christian life, in order to adhere and respond to what the Lord is asking. The required attentiveness is difficult to sustain. We are usually helped by books, and Christians do not want for them: the Sacred Scriptures, particularly the Gospels, holy icons, liturgical texts of the day or season, writings of the spiritual fathers, works of spirituality, the great book of creation, and that of history the page on which the "today" of God is written”. (The Catechism of the Catholic Church, 2705).
+Meditation should be a daily affair for a Christian. In Opus Dei centres, weekly Meditations are organised where a priest preaches in the Tabernacle while personal prayer on what is being said goes on. These meditations have continued online due to current conditions and they take place every Wednesday at 6 pm. 
+</p>
 
                         <a href="#subscribe" class="btn btn-warning  text-light float-right my-3"
                            style="max-width:300px;">SUBSCRIBE ></a>
@@ -350,7 +345,7 @@
             Read more about the activities, the Prelate and the message of Opus Dei through the link below.
         </p>
         <a href="https://opusdei.org" target="blank" class="text-warning ">
-            <h4 class="m-0 p-0 text-warning">Learn more</h4>
+            <h4 id ="subscribe" class="m-0 p-0 text-warning">Learn more</h4>
         </a>
     </div>
 </div>

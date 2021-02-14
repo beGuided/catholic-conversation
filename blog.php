@@ -71,10 +71,10 @@
 
                 <div class="col-md- col-12 col-sm-12 col-lg-4 col-xl-4 position-relative my-1  ">
                     <a href="post.php?source=blog_post_details&p_id=<?php echo $blog_post_id ?>">
-                    <img src="assets/images/blog/<?php echo $blog_post_image;?>" style="max-height:250px;" alt="test" class="img-fluid img-responsive w-100 m-0">
+                    <img src="assets/images/blog/<?php echo $blog_post_image;?>" style="max-height:250px;" alt="test" class="img-fluid img-responsive h-auto w-100 ">
                     </a>
                     <div class="position-absolute p-5 top-0 end-0 ">
-                        <h3 class="text-white bg-blog-back"><?php echo $blog_post_title;?></h3>
+                        <h3 class="text-white bg-blog-back p-2"><?php echo $blog_post_title;?></h3>
                     </div>
                     <div class="position-absolute bottom-0 end-0  p-5">
                         <a href="post.php?source=blog_post_details&p_id=<?php echo $blog_post_id ?>" class="btn btn-warning pull-right btn-margin px-5 textblack font-10"> >

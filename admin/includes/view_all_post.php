@@ -50,8 +50,8 @@ if(isset($_POST['checkBoxesArray'])){
                         <th>Author</th>
                         <th>Title</th>
                         <th>Topic</th>
-                        <th>Vid link</th>
-                        <th>Slide link</th>
+                        <th style="width:10px">Vid link</th>
+                        <th style="width:10px">Slide link</th>
                         <th>Categories</th>
                         <th>Status</th>
                         <th>Images</th> 

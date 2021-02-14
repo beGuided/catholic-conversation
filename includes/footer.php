@@ -77,7 +77,6 @@
             <div class="container-fluid"> 
             <div class="row ">
                 <div class="col-lg-12 col-md-12 col-sm-8 text-center">
-
                     <a href="#">
                     <i class="fa fa-whatsapp text-dark bg-warning btn "></i>
                     </a>

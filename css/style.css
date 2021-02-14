@@ -1,14 +1,14 @@
 @font-face{
     font-family: poppinsregular;
-    src: url(assets/fonts/Poppins/Poppins-Regular.ttf);
+    src: url(../assets/fonts/Poppins/Poppins-Regular.ttf);
 }
 @font-face{
     font-family: poppinsblack;
-    src: url(assets/fonts/Poppins/Poppins-Black.ttf);
+    src: url(../assets/fonts/Poppins/Poppins-Black.ttf);
 }
 @font-face{
     font-family: poppinsxbold;
-    src: url(assets/fonts/Poppins/Poppins-ExtraBold.ttf);
+    src: url(../assets/fonts/Poppins/Poppins-ExtraBold.ttf);
 }
 
 *{
@@ -29,9 +29,7 @@
 a {
     text-decoration: none;
 }
-a:active{
-    color: : black;
-}
+
 li{
     color: white;
     list-style-type: none;
@@ -54,13 +52,7 @@ li{
     margin: auto;
     margin-bottom: 20px;
 }
-/*.bg{*/
-/*    background: url(../assets/images/blog/bg-1.png) no-repeat rgb(71, 67, 3);*/
-/*    background-blend-mode: multiply;*/
-/*    background-size: cover;*/
-/*    width: 100%;*/
-/*    opacity: 95%;*/
-/*}*/
+
 .bg-image{
     margin: auto;
     height: 450px;
@@ -92,15 +84,15 @@ li{
     background-blend-mode: multiply;}
 .bg-book{
     height: 200px;
-    background: url(../assets/images/blog/ryoji-iwata-IBaVuZsJJTo-unsplash@3x.png) no-repeat rgb(117, 116, 116);
-    background-size: cover;   
+    background: url(../assets/images/blog/ryoji-iwata-IBaVuZsJJTo-unsplash@3x.png) no-repeat rgb(117, 116, 116);  
+   background-size: cover;  
     background-blend-mode: multiply;
 }
 
 
 .bg-about{
     height: 200px;
-     background: url(../assets/images/blog/ryoji-iwata-IBaVuZsJJTo-unsplash@3x.png) no-repeat rgb(117, 116, 116);
+    background: url(../assets/images/blog/ryoji-iwata-IBaVuZsJJTo-unsplash@3x.png) no-repeat rgb(117, 116, 116);
     background-size: cover;
     background-blend-mode: multiply;
 }
@@ -119,7 +111,7 @@ li{
     background-blend-mode: multiply;
 }
 .bg-blog-back{
-    
+
     margin: auto;
     background:  rgb(19, 18, 18);
     opacity: 70%;

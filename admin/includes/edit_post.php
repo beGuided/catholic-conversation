@@ -12,7 +12,7 @@ if(isset($_GET['p_id'])){
         $post_author = escape($row['post_author']);
         $post_title = escape($row['post_title']);
         $post_topic = escape($row['post_topic']);
-        $post_details = escape($row['post_details']);
+        $post_details = $row['post_details'];
         $post_video_link = escape($row['post_video_link']);
         $post_slide_link = escape($row['post_slide_link']);
         $post_title = escape($row['post_title']);
@@ -20,7 +20,7 @@ if(isset($_GET['p_id'])){
         $post_status =escape( $row['post_status']);
         $post_image = escape($row['post_image']);
         $post_tag = escape($row['post_tag']);
-        $post_comment_count =escape( $row['post_comment_count']);
+        $post_comment_count = escape( $row['post_comment_count']);
         $post_date = escape($row['post_date']);
      }
 
@@ -160,11 +160,9 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
 
            <div class="form-group">
          <label for="post_details">Post details</label>
-          <textarea class="form-control"   name="post_details" cols="30" rows="10">
-          <?php echo str_replace('\r\n', '</br>', $post_details);?>
-        
-        </textarea>
+          <textarea class="form-control"   name="post_details" cols="20" rows="10"> <?php echo str_replace('\r\n', '</br>', $post_details);?></textarea>
          </div>
+
 
   <div class="form-group">
          

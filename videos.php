@@ -12,14 +12,14 @@
 <!-- ---------- -->
 
 <section>
-    <div class="container-fluid bg-book"><br><br>
+    <div class="container-fluid bg-guys"><br><br>
         <h2 class="textblack text-center pt-5 text-white font-20">Videos</h2>
         <div class="divider"></div>
     </div>
     <div class="p-5 text-center textblack ">
 
         <h1 class="m-0">CATHOLIC CONVERSATIONS</h1>
-        <h1 class="textblack m-0 text-warning">BLOG</h1>
+        <h1 class="textblack m-0 text-warning">VIDEOS</h1>
         <div class="divider_full mt-5 img-fluid"></div>
     </div>
 </section>
@@ -71,10 +71,10 @@
 
                 <div class="col-md-3 col-lg-3 col-sm-12 ">
                     <a href="post.php?source=post_details&p_id=<?php echo $post_id ?>">
-                        <img src="assets/images/blog/<?php echo $post_image ?>"style="max-height: 250px"  alt="img" class="img-fluid h-auto w-100"/>
+                        <img src="assets/images/blog/<?php echo $post_image ?>"style="max-height: 200px"  alt="img" class="img-fluid h-auto w-100"/>
                         <div>
                             <h2><?php echo $post_title ?> </h2>
-                            <p><?php echo $post_topic ?> <span class="text-danger">
+                            <p>><?php echo $post_topic ?> <span class="text-danger">
                                     <?php echo $post_details ?></span></p>
                         </div>
                     </a>

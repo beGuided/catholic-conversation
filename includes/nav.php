@@ -4,7 +4,7 @@
 
  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark p-3 ">
             <div class="container-fluid">
-                <a class="navbar-brand" href="">
+                <a class="navbar-brand" href="index.php">
                     <img src="./assets/images/blog/logo.png" alt="logo"></a>
                 <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -17,13 +17,13 @@
                             <a class="nav-link  text-warning" aria-current="page" href="index.php">Home</a>
                         </li>
                          <li class="nav-item">
-                            <a class="nav-link active text-warning" aria-current="page" href="videos.php">video</a>
+                            <a class="nav-link active text-warning" aria-current="page" href="videos.php">Video</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link  text-warning" aria-current="page" href="blog.php">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-warning" aria-current="page" href="podcasts.php">podcast</a>
+                            <a class="nav-link text-warning" aria-current="page" href="podcasts.php">Podcast</a>
                         </li>
 <!--                        <li class="nav-item">-->
 <!--                            <a class="nav-link active text-warning" aria-current="page" href="books.php">Books</a>-->
@@ -31,7 +31,7 @@
         
 
                         <li class="nav-item">
-                            <a class="nav-link active text-warning" aria-current="page" href="about.php">about</a>
+                            <a class="nav-link active text-warning" aria-current="page" href="about.php">About</a>
                         </li>
                        
                     </ul>

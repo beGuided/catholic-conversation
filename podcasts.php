@@ -13,7 +13,7 @@
 <!-- ---------- -->
 
 <section>
-    <div class="container-fluid bg-book"><br><br>
+    <div class="container-fluid bg-teacher"><br><br>
         <h2 class="textblack text-center pt-5 text-white font-20">PODCASTS</h2>
         <div class="divider"></div>
     </div>
@@ -183,7 +183,7 @@
                     $podcast_image = escape($row['podcast_image']);
                     $podcast_date = escape($row['podcast_date']);
                     ?>
-                    <div class="col-lg- col-md-5 col-sm-12 m-auto">
+                    <div class="col-lg-5 col-md-5 col-sm-12 m-auto">
                         <img class="img-fluid w-100" src="./assets/images/blog/<?php echo $podcast_image ?>"
                               style="max-height: 200px" alt="book 1">
                     </div>

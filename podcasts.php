@@ -182,6 +182,7 @@
                     $podcast_link = escape($row['podcast_link']);
                     $podcast_image = escape($row['podcast_image']);
                     $podcast_date = escape($row['podcast_date']);
+                    $audio_time = escape($row['audio_time']);
                     ?>
                     <div class="col-lg-5 col-md-5 col-sm-12 m-auto">
                         <img class="img-fluid w-100" src="./assets/images/blog/<?php echo $podcast_image ?>"
@@ -192,14 +193,15 @@
                             <h5 class="card-title textblack font-20"><?php echo $podcast_title ?></h5>
                             <p class="card-text"><big class="text-warning"><?php echo $podcast_series ?></big></p>
                             <div class="row">
-                                <div class="col-7">
-                                    <h3 class="text-warning">33 mins</h3>
+                                <div class="col-sm-7 col-lg-7">
+                                    <audio id="myAudio" controls="controls" src="<?php echo $podcast_link ?>" >                           </audio><br>
+                                    <h3 class="text-warning"><?php echo $audio_time?></h3>
                                 </div>
-                                <div class="col-5 font-play">
-                                    <a href="<?php echo $podcast_link ?>"> <i class=" fa fa-play-circle text-warning"
+                             <!--    <div class="col-5 font-play">
+                                    <a > <i onclick="toggleplay()" class=" fa fa-play-circle text-warning"
                                                                               aria-hidden="true"></i></a>
 
-                                </div>
+                                </div> -->
                             </div>
 
                         </div>

@@ -1,6 +1,6 @@
 <!-- card 3-->
 <!-- <div class="col-12 col-sm-12 col-md-4 col-lg-4 my-4"> -->
-<div class="container  ">
+<div class="container">
     <div class="row">
         <?php
 
@@ -24,9 +24,9 @@
 
             ?>
 
-            <div class="container my-3">
+            <div class="container-fluid my-3">
                 <div class="row  my-5 g-1">
-                    <div class="col-md-12  ">
+                    <div class="col-md-12 col-sm-12 col-lg-12  ">
                         <img src="assets/images/blog/<?php echo $blog_post_image ?>"
                              class="card-img-top"  style="max-height: 450px" class="img-fluid w-100"/>
                     </div>
@@ -153,7 +153,7 @@ while ($row = mysqli_fetch_assoc($select_comment_query)) {
 <div class="divider_full mt-5 img-fluid"></div>
 </div>
 
-<div class="text-center"><h1>Related Post</h1></div>
+<div class="text-center my-5"><h1>Related Post</h1></div>
 
 <div class="container">
     <div class="row">

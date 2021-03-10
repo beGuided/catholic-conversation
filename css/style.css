@@ -1,29 +1,273 @@
+@font-face{
+    font-family: poppinsregular;
+    src: url(../assets/fonts/Poppins/Poppins-Regular.ttf);
+}
+@font-face{
+    font-family: poppinsblack;
+    src: url(../assets/fonts/Poppins/Poppins-Black.ttf);
+}
+@font-face{
+    font-family: poppinsxbold;
+    src: url(../assets/fonts/Poppins/Poppins-ExtraBold.ttf);
+}
+
+*{
+    font-family: poppinsregular;
+    color: black;
+}
+.textblack{
+    font-family: poppinsblack;
+}
+.textxbold{
+    font-family: poppinsxbold;
+}
+.textxbold-white{
+    font-family: poppinsxbold;
+    color: white;
+}
 
 a {
     text-decoration: none;
 }
+
 li{
     color: white;
     list-style-type: none;
 }
 .slider{
-    margin: 0;
-    height: 44px ;
-    background: brown;
+    height: 450px;
     position: absolute;
 }
 .divider{
-
     background: #ffc107;
     height: 5px;
     width: 200px;
     margin: auto;
     margin-bottom: 20px;
 }
-.divider-full{
+.divider_full{
     background: #ffc107;
-    width: 350px;
-    height: 5px;
+    width: 1000px;
+    height: 3px;
     margin: auto;
     margin-bottom: 20px;
 }
+
+.bg-image{
+    margin: auto;
+    height: 450px;
+    /* width: 1250px; */
+    /* background: url(../assets/images/blog/dylan-gillis-KdeqA3aTnBY-unsplash-1@3x.png) no-repeat;*/
+    background-size: cover; 
+}
+.card-img{
+    height: 70px;
+}
+.bg-slant{
+    height: auto;
+    margin: auto;
+    width: 100%;
+    background: url(../assets/images/blog/slant-bg.png) no-repeat;
+    background-size: cover;
+}
+
+.bg-guys{
+    height: 200px;
+    background: url(../assets/images/blog/guys.jpg) no-repeat rgb(117, 116, 116);
+    background-size: cover;   
+    background-blend-mode: multiply;
+}
+.bg-teacher{
+    height: 200px;
+    background: url(../assets/images/blog/teacher.jpeg) no-repeat rgb(117, 116, 116);
+    background-size: cover;   
+    background-blend-mode: multiply;}
+.bg-book{
+    height: 200px;
+    background: url(../assets/images/blog/ryoji-iwata-IBaVuZsJJTo-unsplash@3x.png) no-repeat rgb(117, 116, 116);  
+   background-size: cover;  
+    background-blend-mode: multiply;
+}
+
+
+.bg-about{
+    height: 200px;
+    background: url(../assets/images/blog/ryoji-iwata-IBaVuZsJJTo-unsplash@3x.png) no-repeat rgb(117, 116, 116);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+.bg-blog{
+    height: 500px;
+    width: 400px;
+    /* background: url(../assets/images/blog/rosary.png) no-repeat rgb(117, 116, 116);
+    background-size: cover;   
+    background-blend-mode: multiply; */
+}
+.bg-blog-full{
+    height: 500px;
+    width: 80%;
+    background: url(../assets/images/blog/rosary.png) no-repeat rgb(117, 116, 116);
+    background-size: cover;   
+    background-blend-mode: multiply;
+}
+.bg-blog-back{
+
+    margin: auto;
+    background:  rgb(19, 18, 18);
+    opacity: 70%;
+    background-blend-mode: multiply;
+}
+.bg-blog-back h2{
+    opacity: 100%;
+    background-blend-mode: normal;
+}
+.font-20{
+font-size: 50px;
+}
+.font-10{
+font-size: 25px;
+}
+.font-play{
+font-size: 80px;
+margin: 0;
+padding: 0;
+}
+.link-n{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 20px;
+}
+.btn-margin{
+    margin-top: 270px;
+}
+
+
+/*video thumbnail*/
+
+.video-list-thumbs{}
+.video-list-thumbs > li{
+    margin-bottom:12px;
+}
+.video-list-thumbs > li:last-child{}
+.video-list-thumbs > li > a{
+    display:block;
+    position:relative;
+    background-color: #42413f;
+    color: #fff;
+    padding: 8px;
+    border-radius:3px;
+    transition:all 500ms ease-in-out;
+    border-radius:4px
+}
+.video-list-thumbs > li > a:hover{
+    box-shadow:0 2px 5px rgba(0,0,0,.3);
+    text-decoration:none
+}
+.video-list-thumbs h2{
+    bottom: 0;
+    font-size: 14px;
+    height: 33px;
+    margin: 8px 0 0;
+}
+.video-list-thumbs .glyphicon-play-circle{
+    font-size: 60px;
+    opacity: 0.6;
+    position: absolute;
+    right: 39%;
+    top: 31%;
+    text-shadow: 0 1px 3px rgba(0,0,0,.5);
+    transition:all 500ms ease-in-out;
+}
+.video-list-thumbs > li > a:hover .glyphicon-play-circle{
+    color:#fff;
+    opacity:1;
+    text-shadow:0 1px 3px rgba(0,0,0,.8);
+}
+.video-list-thumbs .duration{
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    left: 12px;
+    line-height: 13px;
+    padding: 2px 3px 1px;
+    position: absolute;
+    top: 12px;
+    transition:all 500ms ease;
+}
+.video-list-thumbs > li > a:hover .duration{
+    background-color:#000;
+}
+@media (min-width:320px) and (max-width: 480px) {
+    .video-list-thumbs .glyphicon-play-circle{
+        font-size: 35px;
+        right: 36%;
+        top: 27%;
+    }
+    .video-list-thumbs h2{
+        bottom: 0;
+        font-size: 12px;
+        height: 22px;
+        margin: 8px 0 0;
+    }
+}
+
+/*
+slider*/
+
+body{
+  font-family: 'Coiny', cursive;
+}
+header .carousel-inner .item{
+  height: 100vh;
+}
+header .carousel-inner .item img{
+  width: 100%;
+}
+.carousel-caption{
+  padding-bottom: 150px;
+}
+.carousel-caption h2{
+  font-size: 50px;
+  text-transform: uppercase;
+}
+.carousel-control.right{
+  background-image: none;
+}
+.carousel-control.left{
+  background-image: none;
+}
+
+
+
+
+/* ignore the code below */
+
+
+body{
+  font-family: 'Coiny', cursive;
+}
+header .carousel-inner .item{
+  height: 100vh;
+}
+header .carousel-inner .item img{
+  width: 100%;
+}
+.carousel-caption{
+  padding-bottom: 150px;
+}
+.carousel-caption h2{
+  font-size: 50px;
+  text-transform: uppercase;
+}
+.carousel-control.right{
+  background-image: none;
+}
+.carousel-control.left{
+  background-image: none;
+}
+
+
+

@@ -35,7 +35,9 @@
                 <div class="col-md-9 col-lg-9 col-sm-12 col-xl-9 ">
                     <h3><?php echo $post_title ?> </h3>
                     <div  >
-                        <iframe src="https://drive.google.com/file/d/<?php echo $post_video_link ?>/ preview"  class="img-responsive  w-100"></iframe>
+                       <!--  <iframe src="https://drive.google.com/file/d/1Yl3iT1kBZPrgMDVxN0cDr5XTj_-8Vb0l/preview" width="640" height="480"></iframe> -->
+
+                        <iframe src="https://drive.google.com/file/d/<?php echo $post_video_link ?>/preview"  height="640px" class="img-responsive  w-100"></iframe>
 
                         <!-- iframe src="https://www.youtube.com/embed/<?php echo $post_video_link ?>"  height="300px" class="img-responsive  w-100" ></iframe> -->
                     </div>
@@ -153,7 +155,7 @@ while ($row = mysqli_fetch_assoc($select_comment_query)) {
 <?php } ?>
 </div>
 <div class="divider_full mt-5 img-fluid"></div>
-<div class="text-center"><h1>Related Post</h1></div>
+<div class="text-center my-5 "><h1>Related Post</h1></div>
 
 <div class="container">
 <div class="row">

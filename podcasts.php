@@ -14,13 +14,13 @@
 
 <section>
     <div class="container-fluid bg-teacher"><br><br>
-        <h2 class="textblack text-center pt-5 text-white font-20">PODCASTS</h2>
+        <h2 class="textblack text-center pt-5 text-white font-20">Podcast</h2>
         <div class="divider"></div>
     </div>
     <div class="p-5 text-center textblack">
 
-        <h1 class="m-0">CATHOLIC CONVERSATIONS</h1>
-        <h1 class="textblack m-0 text-warning">PODCASTS</h1>
+        <h3 class="m-0">CATHOLIC CONVERSATIONS</h3>
+        <h3 class="textblack m-0 text-warning">PODCASTS</h3>
         <div class="divider_full mt-5 img-fluid"></div>
     </div>
 </section>
@@ -149,7 +149,7 @@
     <!-- ---------- -->
     <div class="container my-3">
 
-        <div class="card p-5">
+        <div class="card p-2">
             <div class="row">
                 <?php
 
@@ -190,11 +190,11 @@
                     </div>
                     <div class="col-lg-7 col-md-7 col-sm-12">
                         <div class="card-body">
-                            <h5 class="card-title textblack font-20"><?php echo $podcast_title ?></h5>
+                            <h3 class="card-title textblack font-15"><?php echo $podcast_title ?></h3>
                             <p class="card-text"><big class="text-warning"><?php echo $podcast_series ?></big></p>
                             <div class="row">
                                 <div class="col-sm-7 col-lg-7">
-                                    <audio id="myAudio" controls="controls" src="<?php echo $podcast_link ?>" >                           </audio><br>
+                                    <audio id="myAudio" controls="controls"  style= "max-width:230px;" src="<?php echo $podcast_link ?>" >                           </audio><br>
                                     <h3 class="text-warning"><?php echo $audio_time?></h3>
                                 </div>
                              <!--    <div class="col-5 font-play">

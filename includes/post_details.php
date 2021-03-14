@@ -37,7 +37,7 @@
                     <div  >
                        <!--  <iframe src="https://drive.google.com/file/d/1Yl3iT1kBZPrgMDVxN0cDr5XTj_-8Vb0l/preview" width="640" height="480"></iframe> -->
 
-                        <iframe src="https://drive.google.com/file/d/<?php echo $post_video_link ?>/preview"  height="640px" class="img-responsive  w-100"></iframe>
+                        <iframe src="https://drive.google.com/file/d/<?php echo $post_video_link ?>/preview"  height="340px" class="img-responsive w-100 "></iframe>
 
                         <!-- iframe src="https://www.youtube.com/embed/<?php echo $post_video_link ?>"  height="300px" class="img-responsive  w-100" ></iframe> -->
                     </div>

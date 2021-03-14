@@ -17,7 +17,7 @@
 
 <div class="container  my-5  ">
         <div class="row ">
-            <h1> Catholic Conversations </h1>
+            <h1 class="text-warning"> Catholic Conversations </h1>
             <p>is here as a space for young men, seeking deeper understanding of the
                 Catholic faith, to meet, discuss, seek clarification about and learn Catholic doctrine. </p>
 </div>
@@ -54,9 +54,9 @@
     <div class="container-fluid bg-slant ">
     <!--  <img src="assets/images/blog/slant-bg.png" > -->
         <!-- label -->
-        <div class="container mt-5 py-5">
-            <div class="row">
-                <h1 class="text-center m-2"><b class="textxbold">LATEST CONVERSATION THREADS</b></h1>
+        <div class="container mt-5 ">
+            <div class="row py-5">
+                <h3 class="text-center my-5"><b class="textxbold">LATEST CONVERSATION THREADS</b></h3>
             <!-- label -->
 
                 <?php
@@ -87,8 +87,18 @@
                             <img src="assets/images/blog/<?php echo $post_image ?>"  style="max-height:200px;" alt="img" class="img-fluid h-auto w-100"/>
                         <div>
                             <h2><?php echo $post_title ?> </h2>
-                            <p>><?php echo $post_topic ?> <span class="text-danger">
-                                    <?php echo $post_details ?></span></p>
+
+                            <div class="row">
+                                <div class="col-6 col-sm-6 m-0 ">
+                                    <p>><?php echo $post_topic ?></p>
+                                </div>
+                                <div class="col-6 col-sm-6 m-0 px-2 " >
+                                    <p class="text-danger">
+                                    <?php echo $post_details ?></p>
+                                </div>
+                                  
+                            </div>
+                           
                         </div>
                         </a>
                         <div>
@@ -210,7 +220,7 @@
                         <h3 class="card-title">Doctrinal Classes with Young Men</h3>
                         <div class="divider_full col-sm-12 img-fluid"></div>
 
-                        <p class="card-text mx-5 text-left ">
+                        <p class="card-text text-left ">
                             Very much like the Catholic conversations, these are weekly classes held in the
                             various centres of Opus Dei across Nigeria. Young men meet to learn about the Catholic
                             faith
@@ -252,7 +262,7 @@
                         <h3 class="card-title">Spiritual Direction</h3>
                         <div class="divider_full col-sm-12 img-fluid"></div>
 
-                        <p class="card-text mx-5 text-left ">
+                        <p class="card-text text-left ">
                           “In the ecclesial service of the ordained minister, it is Christ himself who is present to his Church as Head of his Body, Shepherd of his flock, high priest of the redemptive sacrifice, Teacher of Truth. This is what the Church means by saying that the priest, by virtue of the sacrament of Holy Orders, acts in persona Christi Capitis, in the person of Christ the Head:
 It is the same priest, Christ Jesus, whose sacred person his minister truly represents. Now the minister, by reason of the sacerdotal consecration which he has received, is truly made like to the high priest and possesses the authority to act in the power and place of the person of Christ himself (Catechism of the Catholic Church, 1548).
 The ordained priest acting in the person of Christ has received special graces to guide others closer to Christ. In spiritual direction, there is no judgement and with an openness rooted in the love of Christ and the grace of God, proper guidance is given on living out the Christian faith in daily life. 
@@ -292,7 +302,7 @@ The ordained priest acting in the person of Christ has received special graces t
                         <h3 class="card-title">Meditation</h3>
                         <div class="divider_full  col-sm-12 img-fluid"></div>
 
-                        <p class="card-text mx-5 text-left ">
+                        <p class="card-text  text-left ">
                             Meditations
 “Meditation is above all a quest. The mind seeks to understand the why and how of the Christian life, in order to adhere and respond to what the Lord is asking. The required attentiveness is difficult to sustain. We are usually helped by books, and Christians do not want for them: the Sacred Scriptures, particularly the Gospels, holy icons, liturgical texts of the day or season, writings of the spiritual fathers, works of spirituality, the great book of creation, and that of history the page on which the "today" of God is written”. (The Catechism of the Catholic Church, 2705).
 Meditation should be a daily affair for a Christian. In Opus Dei centres, weekly Meditations are organised where a priest preaches in the Tabernacle while personal prayer on what is being said goes on. These meditations have continued online due to current conditions and they take place every Wednesday at 6 pm. 
@@ -316,15 +326,15 @@ Meditation should be a daily affair for a Christian. In Opus Dei centres, weekly
 <!-- about Opus Dei start -->
 <!--------->
 
-<div class="container-fluid p-5 bg-slant ">
-    <div class="container mb-2 mt-5 p-5">
+<div class="container-fluid  my-5 bg-slant ">
+    <div class="container mb-2 mt-5 py-5">
         <div class="row text-center ">
             <h1><b class="textxbold">About Opus Dei</b></h1>
             <div class="divider_full"></div>
         </div>
     </div>
-    <div class="container mx-6 justify-content-center p-1">
-        <p class="m-0 p-0">Opus Dei, in full, the Prelature of the Holy Cross and Opus Dei, is a personal
+    <div class="container mx-auto justify-content-center ">
+        <p class="font-12">Opus Dei, in full, the Prelature of the Holy Cross and Opus Dei, is a personal
             prelature
             of the Catholic Church, founded in 1928 by Spanish priest, St. Josemaria Esciva. It has over 90,000
             members, a large majority of whom are lay men and women, the others being priests. Opus Dei members

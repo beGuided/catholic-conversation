@@ -11,14 +11,14 @@
 <!-- ---------- -->
 
 <section>
-    <div class="container-fluid bg-book">
-        <h2 class="textblack text-center pt-5 text-white font-20">BLOG</h2>
+    <div class="container-fluid bg-book"><br><br>
+        <h2 class="textblack text-center pt-5 text-white font-20">Blog</h2>
         <div class="divider"></div>
     </div>
     <div class="p-5 text-center textblack ">
 
-        <h1 class="m-0">CATHOLIC CONVERSATIONS</h1>
-        <h1 class="textblack m-0 text-warning">BLOG</h1>
+        <h3 class="m-0">CATHOLIC CONVERSATIONS</h3>
+        <h3 class="textblack m-0 text-warning">BLOG</h3>
         <div class="divider_full mt-5 img-fluid"></div>
     </div>
 </section>

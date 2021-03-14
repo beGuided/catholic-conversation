@@ -8,7 +8,7 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="10000">
-      <img src="./assets/images/slider/slide.png" class="d-block w-100" alt="...">
+      <img src="./assets/images/slider/slide.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5></h5><br><br>
         <h1 class=" text-white">In a busy and distracted world, young men need clearity and directionnow more than ever.</h1>
@@ -19,10 +19,10 @@
       </div>
     </div>
     <div class="carousel-item" data-bs-interval="2000">
-      <img src="./assets/images/slider/slide3.png" class="d-block w-100" alt="...">
+      <img src="./assets/images/slider/slide3.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5></h5>
-        <h1 class=" text-white ">cleare ideas and genuine conversations are a vital part of the journey of meaning and purpose</h1>
+        <h1 class=" text-white ">clear ideas and genuine conversations are a vital part of the journey of meaning and purpose</h1>
         <div class="divider_full w-50"></div>
         <a href="#subscribe">
         <button class="btn-warning btn text-white  py-2 px-4 m-4"> <b class="">SUBSCRIBE</b> </button>

@@ -17,7 +17,7 @@
 
 <div class="container  my-5  ">
         <div class="row ">
-            <h1> Catholic Conversations </h1>
+            <h1 class="text-warning"> Catholic Conversations </h1>
             <p>is here as a space for young men, seeking deeper understanding of the
                 Catholic faith, to meet, discuss, seek clarification about and learn Catholic doctrine. </p>
 </div>
@@ -58,7 +58,7 @@
             <div class="container mt-5 py-5">
 
                     <div class="row text-center m-2">
-                        <h1><b class="textxbold">LATEST CONVERSATION THREADS</b></h1>
+                        <h3 ><b class="textxbold">LATEST CONVERSATION THREADS</b></h3>
                     </div>
                 
                 <!-- label -->
@@ -84,14 +84,24 @@ while($row = mysqli_fetch_assoc($search_query)){
     $post_video_link=escape($row['post_video_link']);
       $post_status = escape($row['post_status']);
 
-    ?>
-     <div class="col-md-3 col-lg-3 col-sm-12 ">
+                    ?>
+        <div class="col-md-3 col-lg-3 col-sm-12 ">
                         <a href="post.php?source=post_details&p_id=<?php echo $post_id ?>">
-                            <img src="assets/images/blog/<?php echo $post_image ?>" style="max-height: 250px" alt="img" class="img-fluid h-auto w-100"/>
+                            <img src="assets/images/blog/<?php echo $post_image ?>"  style="max-height:200px;" alt="img" class="img-fluid h-auto w-100"/>
                         <div>
                             <h2><?php echo $post_title ?> </h2>
-                            <p><?php echo $post_topic ?> <span class="text-danger">
-                                    <?php echo $post_details ?></span></p>
+
+                            <div class="row">
+                                <div class="col-6 col-sm-6 m-0 ">
+                                    <p>><?php echo $post_topic ?></p>
+                                </div>
+                                <div class="col-6 col-sm-6 m-0 px-2 " >
+                                    <p class="text-danger">
+                                    <?php echo $post_details ?></p>
+                          </div>
+                                  
+                            </div>
+                           
                         </div>
                         </a>
                         <div>
@@ -239,6 +249,7 @@ confirm_query($blogPost_query);
         </div>
 
     </div>
+    <br><br><br>
 
     <!---------------->
     <!-- doctrinal end -->
@@ -281,6 +292,7 @@ confirm_query($blogPost_query);
         </div>
 
     </div>
+     
 
 
     <!---------------->

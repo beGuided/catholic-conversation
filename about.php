@@ -9,7 +9,9 @@
 <?php include "includes/db.php" ?>
 
 <section>
-    <div class="container-fluid bg-book">
+    <div class="container-fluid bg-book"><br><br>
+         <h2 class="textblack text-center pt-5 text-white font-20">About</h2>
+        <div class="divider"></div>
     </div>
 <!--    <div class="container-fluid ">-->
 <!--        <div class="row ">-->
@@ -22,9 +24,9 @@
     <!--------->
 
     <div class="container-fluid p-5">
-        <div class="container mb-2 mt-5 p-5">
+        <div class="container">
             <div class="row text-center ">
-                <h1><b class="textxbold">About<span class="text-warning"> Catholic Conversation</span></b></h1>
+                <h3 class="my-4"><b class="textxbold">ABOUT<span class="text-warning textxbold"> CATHOLIC CONVERSATION</span></b></h3>
                 <div class="divider_full"></div>
             </div>
         </div>

@@ -18,8 +18,8 @@
     </div>
     <div class="p-5 text-center textblack ">
 
-        <h1 class="m-0">CATHOLIC CONVERSATIONS</h1>
-        <h1 class="textblack m-0 text-warning">VIDEOS</h1>
+        <h3 class="m-0">CATHOLIC CONVERSATIONS</h3>
+        <h3 class="textblack m-0 text-warning">VIDEOS</h3>
         <div class="divider_full mt-5 img-fluid"></div>
     </div>
 </section>

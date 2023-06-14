@@ -86,16 +86,17 @@
                         <a href="post.php?source=post_details&p_id=<?php echo $post_id ?>">
                             <img src="assets/images/blog/<?php echo $post_image ?>"  style="max-height:200px;" alt="img" class="img-fluid h-auto w-100"/>
                         <div>
-                            <h2><?php echo $post_title ?> </h2>
+                            <h3><?php echo $post_title ?> </h3>
 
                             <div class="row">
-                                <div class="col-6 col-sm-6 m-0 ">
-                                    <p>><?php echo $post_topic ?></p>
+                                <div>
+                                    <p>>Topic: <?php echo $post_topic ?></p>
                                 </div>
-                                <div class="col-6 col-sm-6 m-0 px-2 " >
+                                <!-- <div class="col-6 col-sm-6 m-0 px-2 " >
                                     <p class="text-danger">
-                                    <?php echo $post_details ?></p>
-                                </div>
+                                    <?php $details=  str_replace('\r\n', "\n", $post_details );
+                                   echo $details ?></p>
+                                </div> -->
                                   
                             </div>
                            
@@ -164,7 +165,11 @@
                             <div class="card-body text-center">
                                 <h5 class="card-title"><?php echo $blog_post_title ?></h5>
                                 <p class="text-center">
-                                    <?php echo $blog_post_details ?>
+                                    <?php 
+                                   $details=  str_replace('\r\n', "\n", $blog_post_details );
+                                   echo $details
+                                   ?>
+                                  
                                 </p>
                                 <a href="post.php?source=blog_post_details&p_id=<?php echo $blog_post_id ?>">
                                 <button class="btn  btn-warning px-5 text-white"><b>></b></button>

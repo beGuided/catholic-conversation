@@ -41,7 +41,9 @@
 
                         <!-- iframe src="https://www.youtube.com/embed/<?php echo $post_video_link ?>"  height="300px" class="img-responsive  w-100" ></iframe> -->
                     </div>
-                    <h3><?php echo $post_topic ?> <span class="text-danger textblack"> <?php echo $post_details ?> </span></h3>
+                    <p class="text-danger textblack"> Topic: <?php echo $post_topic ?> </p>
+                    <p > <?php $details=  str_replace('\r\n', "\n", $post_details );
+                     echo $details ?></p>
 
                 </div>
                 <div class="col-md-9 col-12 " style="border-bottom: dotted #ffc107">
@@ -185,8 +187,8 @@ while ($row = mysqli_fetch_assoc($select_comment_query)) {
                     <img src="assets/images/blog/<?php echo $post_image ?>" alt="img" style="max-height: 200px"class="img-fluid h-auto w-100"/>
                     <div>
                         <h2><?php echo $post_title ?></h2>
-                        <p>><?php echo $post_topic ?><span class="text-danger">
-                               <?php echo $post_details ?></span></p>
+                        <p>>Topic: <?php echo $post_topic ?>  </p>
+                        <!-- <p ><?php echo $post_details ?></p> -->
                     </div>
                 </a>
                 <div>

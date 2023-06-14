@@ -36,7 +36,8 @@
                             </h2>
                             <div class="divider_full mt-5 img-fluid"></div>
                             <p class="text-left">
-                                <?php echo $blog_post_details ?>
+                                <?php $details=  str_replace('\r\n', "\n", $blog_post_details );
+                                   echo $details ?>
                             </p>
 
 
@@ -179,7 +180,7 @@ while ($row = mysqli_fetch_assoc($select_comment_query)) {
                         style="max-height: 200px" class="img-fluid w-100" alt="image"/>
                 <div class="card-body text-center">
                     <h5 class="card-title"><?php echo $blog_post_title ?></h5>
-                    <p class="text-center"><?php echo $blog_post_details ?></p>
+                    <!-- <p class="text-center"><?php echo $blog_post_details ?></p> -->
                 </div>
                 </a>
                 </div>

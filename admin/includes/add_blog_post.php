@@ -10,7 +10,7 @@ $blog_post_status = escape($_POST['blog_post_status']);
 $blog_post_image = $_FILES['image']['name'];
 $blog_post_image_temp = $_FILES['image']['tmp_name'];
 
-$blog_post_details = $_POST['blog_post_details'];
+$blog_post_details =  $_POST['blog_post_details'];
 $blog_post_tag = $_POST['blog_post_tag'];
 $blog_Post_date = date('d-m-y');
 

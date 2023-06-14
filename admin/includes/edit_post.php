@@ -160,7 +160,7 @@ echo "<option value='{$cat_id}'>{$cat_title}</option>";
 
            <div class="form-group">
          <label for="post_details">Post details</label>
-          <textarea class="form-control"   name="post_details" cols="20" rows="10"> <?php echo str_replace('\r\n', '</br>', $post_details);?></textarea>
+          <textarea class="form-control"  id="body" name="post_details" cols="20" rows="10"> <?php echo str_replace('\r\n', '</br>', $post_details);?></textarea>
          </div>
 
 

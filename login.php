@@ -7,7 +7,7 @@
 
 
 
-<!--<!-- Page Content -->-->
+<!-- Page Content -->
 <!---->
 <!--<div class="well mt-4 container">-->
 <!--        <div class="col-md-8 m-auto">-->
@@ -32,8 +32,8 @@
 <!--                </form>-->
 <!---->
 <!--            </div>-->
-<!--        </div> <!-- /.col-xs-12 -->-->
-<!--</div> <!-- /.container -->-->
+<!--        </div> /.col-xs-12 -->
+<!--</div>  /.container -->
 
 
 <style>

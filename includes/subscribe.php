@@ -24,7 +24,7 @@ if(isset($_POST['subscribe'])){
             <div class="d-flex form-group text-center mt-5">
                 <input type="email" class="form-control " name="email" id="email"
                        placeholder="Enter e-mail here"/>
-                <button type="submit" name="subscribe" class=" btn-warning btn img-responsive"><b>SUBSCRIBE</b></button>
+                <button type="submit" name="subscribe" class=" btn btn-warning "><b>SUBSCRIBE</b></button>
             </div>
         </form>
         </div>

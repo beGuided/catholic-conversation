@@ -116,7 +116,6 @@ if(isset($_POST['checkBoxesArray'])){
                         </tbody>
                         </table>
 </form>
-                        
 
                         <?php 
 

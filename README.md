@@ -20,12 +20,11 @@ Step 2: Place the Folder in WAMP Server
 
 Step 3: Configure WAMP Server
 1. Open the WAMP server control panel and ensure that the server is online.
-2. Create a new virtual host for your project (optional but recommended).
 
 Step 4: Run the Project
 1. Open a web browser and navigate to `http://localhost/myproject` (replace `myproject` with your actual folder name).
 2. You should see your project running on your local machine.
-
+3. copy a sample database (sql file) from the project folder and upload on database management area
 Requirements
 
 - WAMP server (or similar PHP development environment)
